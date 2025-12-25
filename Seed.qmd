@@ -115,11 +115,12 @@ for (i in 1:length(works)) {
 }
 
 image_works <- mutate(images, across(everything(), \(v) ifelse(v=="-", NA, v))) |>
-#    left_join(db.FS, by=join_by(title == Title.FS, artist == Artist.FS)) 
-    left_join(db.FS, by=join_by(description == Description.FS))
+#    left_join(db.FS, by=join_by(title == Title.FS, artist == Artist.FS)) |>
+    left_join(db.FS, by=join_by(description == Description.FS)) |>
+    filter(!is.na(ID.FS)) |>
+    select(ID.FS, image)
 
-missing <- filter(image_works, is.na(ID.FS)) |>
-    select(name:image)
+
 ```
 
 # Merge...
@@ -225,15 +226,32 @@ for (i in 1:nrow(master)) {
   } else {
       sub_dir_name <- paste0(clean_name(rec_artist), "--", rec_id)
   }
-  target_dir <- file.path(safe_owner, sub_dir_name)
+  target_dir <- file.path("works", safe_owner, sub_dir_name)
   
   if (!dir.exists(target_dir)) {
     #dir.create(target_dir)
     message("Target directory not found: ", target_dir)
-    }
-  
+  } else {
+      master$target_dir[i] <- as.character(target_dir)
+      fsid <- master$ID.FS[i] |> as.integer()
+      if (!is.na(fsid)) {
+          to_copy <- filter(image_works, ID.FS == fsid)
+          if (nrow(to_copy) > 0) {
+              for (j in 1:nrow(to_copy)) {
+                  if (!file.exists(file.path(target_dir, basename(to_copy$image[j])))) {
+                      file.copy(to_copy$image[j], target_dir)
+                      message("Copy to ", target_dir, ", ", to_copy$image[j])
+                  }
+              }
+          }
+      }
+  }
 }
 message("Directory structure check complete.")
+
+deploy_info <- select(master, -ID.FS, -ID.BK, -Value.FS, -Value.Safeco) |> 
+    select(target_dir, everything()) |>
+    rename(Value = Value.DRK)
 
 ```
 # Create Documents
@@ -361,7 +379,7 @@ photos_source_dir <- "./photos"
 if (!dir.exists(photos_source_dir)) stop("Photos directory not found!")
 
 # Find all files ending in jpeg or jpg (case insensitive)
-photo_files <- dir(photos_source_dir, pattern = "(?i)\\.jpe?g$", full.names = TRUE)
+photo_files <- dir(photos_source_dir, pattern = "(?i)\\.jpe?g?$", full.names = TRUE)
 
 if (length(photo_files) == 0) {
   message("No JPEG files found in ", photos_source_dir)
