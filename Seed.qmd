@@ -1,0 +1,462 @@
+---
+title: "Art Database Seed"
+author: "Bill Kayser"
+date: today
+format:
+  html:
+    toc: true
+    toc-location: left
+    code-fold: show
+    code-tools: true
+    theme: cosmo
+    highlight-style: github
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# Load required packages
+library(rlibwhk)
+library(tidyverse)
+library(officer)
+library(fs) # Excellent package for file system operations
+
+```
+
+# Load Bill's Extended Inventory
+
+```{r}
+#| label: bill
+library(googlesheets4)
+ss <- 'https://docs.google.com/spreadsheets/d/1AxGjEo8rOrx-PLjQXksMyNnyp_X_pyB3BvBHbMNx2pc/edit?gid=863655515#gid=863655515'
+gs4_auth(email='pennybot@gmail.com')
+db.BK <- read_sheet(ss) |>
+    mutate(Description = as.character(Description),
+           Details = ifelse(Description == "NULL", NA, Description),
+           ID.BK = as.integer(`Ref #`)) |>
+    select(ID.BK,
+           Artist.BK = Artist,
+           Title.BK = Name,
+           Medium.BK = Type,
+           Location.BK = Location,
+           Room.BK = Room,
+           Year.BK = Acquired,
+           Size.BK = Size,
+           Details,
+           Gallery =`Gallery Purchased`,
+           Value.BK = Value,
+           InsuredByChubb = `Insured by Chubb previously`,
+           Value.Safeco = `Safeco Insurance Coverage`
+           )
+
+```
+
+# Load Fairsplit Data
+
+```{r}
+#| label: fairsplit
+
+db.FS <- read_csv("sources/FairSplit-Final.csv") |>
+    suppressMessages() |>
+    filter(Status.FS %in% c('Completed', 'Divide', 'Keep', 'Stays'))
+
+#write_csv(db.FS, "sources/FairSplit-Final.csv")
+
+```
+
+# Round 1 Info
+
+```{r}
+#| label: round1
+
+round1 <- read_csv('Round1Distribution.csv') |>
+    filter(!is.na(Proposed) & Category %in% c('Fine Art')) |>
+    mutate(ID = as.integer(Number)) |>
+    select(Round1 = Proposed,
+           ID.FS = ID)
+
+```
+
+# Organize Photos
+
+We ran this once and it was partially successful.  For some reason, FS renders reports of assets with IDs that are different than what appears when you download them, so it's
+impossible to tell what assets photos belong to.  
+
+Don't run this again.
+
+```{r}
+#| label: photos
+#| eval: FALSE
+
+doc <- read_html("./Fair Split.html")
+images <- tibble()
+id <- list()
+works <- html_elements(doc, css = 'div.report__item-image-column,div.report__item-description-columns,div.report__item-columns--desktop')
+for (i in 1:length(works)) {
+    e <- works[i]
+    class = html_attr(e, 'class')
+    cols <- html_children(e)
+    if (class == 'report__item-columns--desktop') {
+        id <- list(name = html_text(cols[2]),
+                   title = html_text(cols[6]),
+                   artist = html_text(cols[5]),
+                   year = html_text(cols[7]))
+    } else if (class == 'report__item-description-columns') {
+        id$description = html_text(cols[2])
+    } else {
+        id$image <- html_element(e, "img") |> html_attr("src")
+        images <- bind_rows(images, id)
+    }
+}
+
+image_works <- mutate(images, across(everything(), \(v) ifelse(v=="-", NA, v))) |>
+#    left_join(db.FS, by=join_by(title == Title.FS, artist == Artist.FS)) 
+    left_join(db.FS, by=join_by(description == Description.FS))
+
+missing <- filter(image_works, is.na(ID.FS)) |>
+    select(name:image)
+```
+
+# Merge...
+
+```{r}
+#| label: merge-fs
+
+.combined <- full_join(db.BK, db.FS, by=join_by(Artist.BK == Artist.FS, Title.BK == Title.FS)) |>
+    full_join(round1, by=join_by(ID.FS))
+db.combined <- select(.combined, ID.FS, ID.BK, Artist.BK, Title.BK, sort(names(.combined))) |>
+    mutate(Location = ifelse(!is.na(Location.BK), Location.BK, Origin.FS),
+           Room = ifelse(!is.na(Room.BK), Room.BK, Room.FS)) |>
+    mutate(ID = ifelse(is.na(ID.BK), str_c("FS", ID.FS), ID.BK),
+           ID.FS <- as.integer(ID.FS),
+           Distributed = case_when(!is.na(Owner) ~ "2025",
+                                   !is.na(Round1) ~ "2021",
+                                   .default = ""),
+           Owner = ifelse(is.na(Owner), Round1, Owner)) |>
+    select(ID,
+           Artist = Artist.BK,
+           Title = Title.BK,
+           Medium = Medium.BK,
+           Description = Description.FS,
+           Details,
+           Size = Size.BK,
+           Category = Category.FS,
+           Owner,
+           Distributed,
+           Location,
+           Gallery,
+           Status = Status.FS,
+           Value.DRK = Value.BK,
+           Value.FS = Value.Fairsplit,
+           Value.Safeco,
+           Acquired = Year.FS,
+           ID.FS,
+           ID.BK) |>
+    arrange(ID.BK, ID)
+
+write_csv(db.combined, "./Combined.csv")
+
+```
+
+Now we've switched to using a master spreadsheet.  It's no longer read-only.  
+
+```{r}
+master <- read_csv("Master.csv")
+
+```
+# Create Directory Structure
+
+Use this prompt:
+
+Using the same file as a reference, write a block that will create any missing folders for each record in db.combined.  For each record in db.combined:
+1. Extract ID, Owner, and Title.
+2. Create a directory if it does not already exist with the Owner name.  If the Owner is NA, create "Unclaimed".
+3. Within the owner directory, if it doesn't exist already create a directory with a name consisting of the Artist cleaned of any special characters that do not belong in a file name, followed by "--" and the
+ID.
+
+```{r}
+#| label: directories
+#| eval: FALSE
+
+# --- Helper Functions ---
+
+# Function to clean strings for file paths
+clean_name <- function(x) {
+  if (is.na(x)) return("Unknown")
+  # Replace invalid chars with nothing, keep alphanumeric, space, dash, underscore
+  cleaned <- str_replace_all(x, "[^a-zA-Z0-9 \\-_]", "") |> str_trim()
+  if (nchar(cleaned) == 0) return("Unknown")
+  return(cleaned)
+}
+
+# --- Step 2: Ensure Directory Structure Exists for ALL Records ---
+# This block iterates through every record in the DB and creates the folder structure
+# Owner/Artist--ID, even if there are no photos for it yet.
+
+message("Verifying/Creating directory structures for all DB records...")
+
+for (i in 1:nrow(master)) {
+  # 1. Extract Info
+  r <- master[i, ]
+  
+  rec_id <- r$ID
+  
+  # Handle NA values
+  rec_owner <- if (is.na(r$Owner)) "Unclaimed" else r$Owner
+  rec_artist <- if (is.na(r$Artist)) "Unknown" else r$Artist
+  
+  # 2. Create Owner Directory
+  safe_owner <- clean_name(rec_owner)
+  
+  if (!dir.exists(safe_owner)) {
+    dir.create(safe_owner)
+    message("Created owner directory: ", safe_owner)
+  }
+  
+  # 3. Create Sub-directory (Artist--ID)
+  .search <- str_match(rec_artist, "^(.*), ?(.*)$")
+  if (!is.na(.search[,1])) {
+      sub_dir_name <- paste0(.search[,3], " ", .search[,2], "--", rec_id) |> clean_name()
+  } else {
+      sub_dir_name <- paste0(clean_name(rec_artist), "--", rec_id)
+  }
+  target_dir <- file.path(safe_owner, sub_dir_name)
+  
+  if (!dir.exists(target_dir)) {
+    #dir.create(target_dir)
+    message("Target directory not found: ", target_dir)
+    }
+  
+}
+message("Directory structure check complete.")
+
+```
+# Create Documents
+
+I used the following prompt:
+
+In an R qmd file I want to process the attached table, identified as master, by performing these tasks for each row:
+1. Create a directory if it does not already exist with the name given by the Owner column.  If the Owner is NA, use "Unclaimed" for the name of the directory.
+2. Within the owner directory, create a directory with a name consisting of the ID concatenated with "--" and the Title column of the work cleaned of any special characters that do not belong in a file name.
+3. Create a filename using the column Title again, cleaned of special characters.
+
+
+```{r}
+#| label: organize
+#| eval: FALSE
+
+# 2. Iterate through each row
+# We use a loop here because we are performing file system operations
+# and writing individual files, which is clearer in a loop than apply functions.
+
+for(i in 1:nrow(master)) {
+  
+  # Extract the current row as a single-row tibble
+  current_row <- master[i, ]
+  
+  # --- Step 1 & 2: Create Directory Structure ---
+  
+  # Handle Owner (Step 1)
+  owner_raw <- ifelse(is.na(current_row$Owner), "Unclaimed", current_row$Owner)
+  owner_dir <- clean_name(owner_raw)
+  
+  # Handle ID (Step 2)
+  # ID is numeric, so we convert to character
+  id_dir <- clean_name(as.character(current_row$ID))
+  
+  # Construct the full path: Owner/ID/
+  target_dir <- file.path(owner_dir, id_dir)
+  
+  # Create directory recursively (creates both parent and child if missing)
+  if (!dir.exists(target_dir)) {
+    dir.create(target_dir, recursive = TRUE)
+  }
+  
+  # --- Step 3: Create Filename ---
+  
+  title_raw <- current_row$Title
+  file_name <- paste0(clean_name(title_raw), ".docx")
+  full_file_path <- file.path(target_dir, file_name)
+  
+  # --- Step 4: Generate Document ---
+  
+  # Prepare the data for the table:
+  # Pivot the single row into a long format: [Attribute, Value]
+  table_data <- current_row |>
+    mutate(across(everything(), as.character)) |> # Ensure all values are text
+    pivot_longer(
+      cols = everything(), 
+      names_to = "Attribute", 
+      values_to = "Value"
+    ) |>
+    replace_na(list(Value = "")) # Replace NAs with empty strings for the table
+  
+    # Initialize a new Word document
+  doc <- rtf_doc()
+  
+  # Add a header with the Title
+  doc <- doc |>
+    body_add_par(value = str_c("Item Detail: ", title_raw), style = "heading 1") |>
+    body_add_par(value = "", style = "Normal") # Add spacing
+  
+  # Add the table of attributes
+  doc <- doc |>
+    body_add_table(value = table_data, style = "table_template")
+  
+  # Save the document
+  print(doc, target = full_file_path)
+  
+  
+  # Initialize a new Word document
+  doc <- read_docx()
+  
+  # Add a header with the Title
+  doc <- doc |>
+    body_add_par(value = str_c("Item Detail: ", title_raw), style = "heading 1") |>
+    body_add_par(value = "", style = "Normal") # Add spacing
+  
+  # Add the table of attributes
+  doc <- doc |>
+    body_add_table(value = table_data, style = "table_template")
+  
+  # Save the document
+  print(doc, target = full_file_path)
+  
+  # Optional: Progress indicator
+  if (i %% 10 == 0) message(sprintf("Processed %d of %d rows...", i, nrow(master)))
+}
+
+message("Processing complete!")
+
+```
+
+# Copy the images
+
+Use this prompt:
+
+Using the same file as a reference, write a block that will examine a directory "./photos" and get a list of all files ending with jpeg.  For each of those files perform the following actions.
+1. Extract all leading numerical digits from the front of the file name.  Designate those as the ID of the record in master.  
+2. Using that ID, look up the Owner, Artist and Title in the corresponding record with a matching ID in master. 
+3. If a record is not found, use "Unclaimed" for the Owner and "Unknown" for the Title and Artist.
+4. Create a directory if it does not already exist with the Owner name.  If the Owner is NA, use "Unclaimed" for the name of the directory.
+5. Within the owner directory, create a directory with a name consisting of the Artist cleaned of any special characters that do not belong in a file name, followed by "--" and the
+ID.
+6. Copy the file from the ./photos directory to the directory you just created.  Rename it to a name consisting of the ID concatenated with "--" followed by the Title cleaned of any special characters, followed by " - " and a unique two digit counter to distinguish it from other photos with the same ID prefix.
+
+You will end up with directories that have multiple files with the same name but a numerical suffix for each one like "00", "01", "02", etc.
+
+```{r}
+#| label: photo-copy
+#| eval: FALSE
+
+# --- Configuration ---
+photos_source_dir <- "./photos"
+
+# --- Step 2: Scan Photos ---
+if (!dir.exists(photos_source_dir)) stop("Photos directory not found!")
+
+# Find all files ending in jpeg or jpg (case insensitive)
+photo_files <- dir(photos_source_dir, pattern = "(?i)\\.jpe?g$", full.names = TRUE)
+
+if (length(photo_files) == 0) {
+  message("No JPEG files found in ", photos_source_dir)
+  quit(save = "no")
+}
+
+message(sprintf("Found %d photos to process.", length(photo_files)))
+
+# Track counters for duplicate ID/Title combinations to generate suffixes like "01", "02"
+# We will use a named vector where key = "ID--Title" and value = count
+file_counters <- c()
+
+# --- Step 3: Process Each Photo ---
+
+for (photo_path in photo_files) {
+  
+  filename <- basename(photo_path)
+  
+  # 1. Extract leading digits
+  # Regex: ^([0-9]+) captures digits at the start of the string
+  matches <- str_match(filename, "^([0-9]+)")
+  photo_id <- matches[1, 2]
+  
+  # Initialize variables
+  owner <- "Unclaimed"
+  artist <- "Unknown"
+  title <- "Unknown"
+  
+  # 2. Lookup in DB
+  if (!is.na(photo_id)) {
+    # Find record
+    record <- master |> filter(ID == photo_id)
+    
+    if (nrow(record) > 0) {
+      # Record found
+      r <- record[1, ] # Take first match if duplicates exist
+      
+      if (!is.na(r$Owner)) owner <- r$Owner
+      if (!is.na(r$Artist)) artist <- r$Artist
+      if (!is.na(r$Title)) title <- r$Title
+    }
+  } else {
+    # If no ID found in filename, we skip or handle as "Unknown" ID?
+    # The prompt implies we extract digits to find the ID. 
+    # If a file is named "vacation.jpg", it has no ID. We'll skip or use "0" logic.
+    # For now, let's skip files with no leading digits to be safe.
+    message("Skipping file with no leading ID: ", filename)
+    next
+  }
+  
+  # 3. Clean strings for filesystem
+  safe_owner <- clean_name(owner)
+  safe_artist <- clean_name(artist)
+  safe_title <- clean_name(title)
+  
+  # 4. Create Directory Structure
+  # Structure: Owner / Artist--ID
+  
+  # Owner Directory
+  if (is.na(owner)) safe_owner <- "Unclaimed"
+  
+  # Sub-directory: Artist--ID
+  sub_dir_name <- paste0(safe_artist, "--", photo_id)
+  
+  target_dir <- file.path(safe_owner, sub_dir_name)
+  
+  if (!dir.exists(target_dir)) {
+    dir.create(target_dir, recursive = TRUE)
+  }
+  
+  # 5. Generate New Filename
+  # Format: ID--Title - Counter.jpg
+  
+  # Base name for tracking duplicates
+  base_key <- paste0(photo_id, "--", safe_title)
+  
+  # Increment counter
+  if (base_key %in% names(file_counters)) {
+    file_counters[base_key] <- file_counters[base_key] + 1
+  } else {
+    file_counters[base_key] <- 0
+  }
+  
+  # Format counter as two digits (00, 01, etc)
+  counter_str <- sprintf("%02d", file_counters[base_key])
+  
+  new_filename <- paste0(photo_id, "--", safe_title, " - ", counter_str, ".jpg")
+  destination_path <- file.path(target_dir, new_filename)
+  
+  # 6. Copy File
+  file.copy(photo_path, destination_path)
+  
+  # Log action
+  message(sprintf("Processed: %s -> %s", filename, destination_path))
+}
+
+message("Photo organization complete!")
+```
