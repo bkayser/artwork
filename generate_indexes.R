@@ -5,13 +5,18 @@ library(fs)
 library(htmltools) # Using htmltools for safer/cleaner HTML generation
 
 # PROMPT
-# Write code that will use the attached table to create an index.html file in every directory listed as a value in target_dir.  In each of these directories there may exist image files that end in "jpe" "jpg" or "jpeg".  There may also exist supplementary PDF files.  The index file should be laid out:
-#
-# 1. The values in the remaining columns for the row should appear in a table for reference in the HTML file.
-# 2. Next to the table should be a Link to each PDF file found in the directory.
-# 3. The images in the directory should be displayed in the HTML file with a maximum size of 600 pixels wide, each.  
+# Write code that will use the attached table to create an index.html file in every directory listed as a value in target_dir.
+# In each of these directories there may exist image files that end in "jpe" "jpg" or "jpeg".  There may also exist supplementary PDF files.
+# The index file for each row should be laid out according to these rules:
+# 1. Each column except 'target_dir' that has a non-empty value should appear as an attribute in a vertical table.
+# 2. The table will have a column with the attribute name and a column with the attribute value.
+# 3. For the Links attribute, put a hyperlink in the value column for each link listed.  The name of the link should be the hostname part of the URL, and the href should be the link.
+# 4. Next to the table should be a Link to each PDF file found in the directory.
+# 5. The images in the directory should be displayed in the HTML file with a maximum size of 600 pixels wide, each.
+# 6. If an image is clicked it should open a popup window with the image in full size.
 # 
-# The html file should be laid out neatly with CSS classes assigned to elements.  In addition to the R code, generate a CSS file to put in the works directory which will give a clean minimalist but pleasing aesthetic to all the index files, which will reference the CSS file from the "works" directory.
+# The html file should be laid out neatly with CSS classes assigned to elements.  In addition to the R code, generate a CSS file to put in the works directory which will give a clean minimalist but pleasing aesthetic to all the index files, each of which will reference the CSS file from the "works" directory.
+# Make the view responsive so it looks okay in mobile apps.
 
 # --- Configuration ---
 csv_file <- "deploy_info.csv"

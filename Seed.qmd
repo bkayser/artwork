@@ -168,7 +168,7 @@ Now we've switched to using a master spreadsheet.  It's no longer read-only.
 
 ```{r}
 master <- read_csv("Master.csv")
-
+    
 ```
 # Create Directory Structure
 
@@ -212,7 +212,7 @@ for (i in 1:nrow(master)) {
   rec_artist <- if (is.na(r$Artist)) "Unknown" else r$Artist
   
   # 2. Create Owner Directory
-  safe_owner <- clean_name(rec_owner)
+  safe_owner <- file.path("Works", clean_name(rec_owner))
   
   if (!dir.exists(safe_owner)) {
     dir.create(safe_owner)
@@ -226,32 +226,66 @@ for (i in 1:nrow(master)) {
   } else {
       sub_dir_name <- paste0(clean_name(rec_artist), "--", rec_id)
   }
-  target_dir <- file.path("works", safe_owner, sub_dir_name)
+  target_dir <- file.path(safe_owner, sub_dir_name)
   
   if (!dir.exists(target_dir)) {
     #dir.create(target_dir)
     message("Target directory not found: ", target_dir)
   } else {
-      master$target_dir[i] <- as.character(target_dir)
-      fsid <- master$ID.FS[i] |> as.integer()
-      if (!is.na(fsid)) {
-          to_copy <- filter(image_works, ID.FS == fsid)
-          if (nrow(to_copy) > 0) {
-              for (j in 1:nrow(to_copy)) {
-                  if (!file.exists(file.path(target_dir, basename(to_copy$image[j])))) {
-                      file.copy(to_copy$image[j], target_dir)
-                      message("Copy to ", target_dir, ", ", to_copy$image[j])
-                  }
-              }
-          }
-      }
+      # master$target_dir[i] <- as.character(target_dir)
+      # fsid <- master$ID.FS[i] |> as.integer()
+      # if (!is.na(fsid)) {
+      #     to_copy <- filter(image_works, ID.FS == fsid)
+      #     if (nrow(to_copy) > 0) {
+      #         for (j in 1:nrow(to_copy)) {
+      #             if (!file.exists(file.path(target_dir, basename(to_copy$image[j])))) {
+      #                 file.copy(to_copy$image[j], target_dir)
+      #                 message("Copy to ", target_dir, ", ", to_copy$image[j])
+      #             }
+      #         }
+      #     }
+      # }
   }
 }
 message("Directory structure check complete.")
+```
 
-deploy_info <- select(master, -ID.FS, -ID.BK, -Value.FS, -Value.Safeco) |> 
-    select(target_dir, everything()) |>
-    rename(Value = Value.DRK)
+```{r}
+#| label: prepare-info
+
+.master <- master |>
+    mutate(first = str_extract(Artist, ", ?(.*)$", group=1),
+           last = str_extract(Artist, "^([^,]+),", group=1),
+           `Artist Name` = ifelse(is.na(first), Artist, str_c(first, " ", last))) |>
+    select(-first, -last)
+    
+write_lines(.master$`Artist Name` |> sort() |> unique(), file = "artist_names.txt")
+
+master$Links |> na.omit() |> sort() |> unique() |>
+    write_lines("links.txt")
+
+deploy_info <- select(.master, -ID.FS, -ID.BK, -Value.FS, -Value.Safeco) |> 
+    rename(Value = Value.DRK) |>
+    left_join(read_csv("artists.csv")) |>
+    select(ID,
+           `Artist Name`,
+           Born = `Year of Birth`,
+           Died = `Year of Death`,
+           Hometown,
+           Bio = Description,
+           Links,
+           Work = Title,
+           Medium,
+           Size,
+           Details,
+           Gallery,
+           Value,
+           Acquired,
+           Location,
+           Distributed,
+           Owner)
+
+write_csv(deploy_info, "deploy_info.csv", na="\n")
 
 ```
 # Create Documents
@@ -329,7 +363,7 @@ for(i in 1:nrow(master)) {
   # Save the document
   print(doc, target = full_file_path)
   
-  
+    
   # Initialize a new Word document
   doc <- read_docx()
   

@@ -1,154 +1,777 @@
-target_dir,ID,Artist,Title,Medium,Description,Details,Size,Category,Owner,Location,Gallery,Status,Value,Acquired,Distributed
-works/Jean/Victoria Adams--65,65,"Adams, Victoria",Things about Sky #43,Oil on Canvas,Oil on Canvas; acquired from Leach Gallery; size = 12x12 (#65),NA,12x12,Fine Art,Jean,Portland,Leach Gallery,Completed,2500,2003,2021
-works/Unclaimed/David Airhart--50,50,"Airhart, David",Cat Boy,Oil,NA,NA,NA,NA,NA,Scottsdale,Stewart,NA,500,NA,NA
-works/Bill/B Alvino--219,219,"Alvino, B",lady sitting on rock,Metal,"Metal, Cast, maybe bronze but lightweight; size = 10 hight (#219)","Cast, maybe bronze but lightweight",10 hight,Fine Art,Bill,Portland,NA,Completed,NA,NA,2021
-works/Bill/Chuck Arnaldi--16,16,"Arnaldi, Chuck",Untitled,Monoprint,"Monoprint, Inscribed on the back, ""For Don and Mary Sun Valley New Years 1992 -- Charles Arnaldi""; acquired from Ochi; size = 12x10 (#16)","Inscribed on the back, ""For Don and Mary Sun Valley New Years 1992 -- Charles Arnaldi""",12x10,Fine Art,Bill,Portland,Ochi,Completed,1500,1992,2021
-works/Unclaimed/Benecke--9,9,Benecke,Paris,Acrylic,NA,NA,36x48,NA,NA,Scottsdale,NJ,NA,3000,NA,NA
-works/Jean/Donna Bernstein--204,204,"Bernstein, Donna",Lascaux,Mixed,"Mixed, Mixed media acrylics, ink on fine watercolor paper, custom framed; have certificates of authenticity; acquired from Celebration of Fine Art/Donna B Fine Art (#204)","Mixed media acrylics, ink on fine watercolor paper, custom framed; have certificates of authenticity",NA,Fine Art,Jean,Scottsdale,Celebration of Fine Art/Donna B Fine Art,Divide,2000,2015,2025
-works/Jean/Donna Bernstein--228,228,"Bernstein, Donna",Field of Dreams,Mixed,"Mixed, Mixed media acrylics, ink on canvas; have certificate of authenticity; acquired from Celebration of Fine Art/Donna B Fine Art; size = 36x48 (#205)","Mixed media acrylics, ink on canvas; have certificate of authenticity",36x48,Fine Art,Jean,Scottsdale,Celebration of Fine Art/Donna B Fine Art,Divide,3000,2015,2025
-works/Kevin/Sonja Bloomdahl--46,46,"Bloomdahl, Sonja",Glass Vase,Blown Glass,Blown Glass; acquired from Boise Art Museum; size = 15 in; insured (#46),NA,15 in,Fine Art,Kevin,Scottsdale,Boise Art Museum,Divide,8000,2002,2025
-works/Bill/Robin Branham--40,40,"Branham, Robin",The Stick,Oil on Steel,"Oil on Steel,  5ft long; acquired from Celebration of Fine Art",NA,5 ft,Fine Art,Bill,Scottsdale,Friesen,Divide,1600,2010,2025
-works/Chris/George Budnick--FS37,FS37,"Budnick, George",Georgia O'Keefe,Photograph,"Photograph, Portrait; acquired from Bishop Gallery (#59)",Portrait,NA,Fine Art,Chris,Portland,Bishop (Scottsdale),Divide,860,2002,2025
-works/Bob/George Budnick--103,103,"Budnick, George",Georgia O'Keefe Portrait,Photograph,"Photograph, Portrait; acquired from Bishop (Scottsdale) (#103)",Portrait,NA,Fine Art,Bob,Portland,Bishop (Scottsdale),Completed,860,1998,2021
-works/Cathy/Robert Burt--68,68,"Burt, Robert",Mexican Road Trip,Acrylic,"Acrylic; no frame, black border; acquired from Xanadu  Gallery; size = 48x48; insured (#68)",NA,48x48,Fine Art,Cathy,Scottsdale,Xanadu  Gallery,Divide,5250,2007,2025
-works/Jean/Robert Burt--112,112,"Burt, Robert",Conversation,Acrylic,Acrylic; acquired from Xanadu; size = 28x22 (#112),NA,28x22,Fine Art,Jean,Scottsdale,Xanadu,Divide,1350,2005,2025
-works/Bill/George Carlson--114,114,"Carlson, George",Ballerina,Bronze,Bronze; acquired from Artist Studio; size = 25 in (#114),NA,25 in,Fine Art,Bill,Portland,Artist Studio,Completed,8000,2005,2021
-works/Bill/George Carlson--115,115,"Carlson, George",Emily Standing,Bronze,"Bronze; acquired from Artist Studio; also referred to as ""Ballerina II""
+target_dir,ID,Artist Name,Born,Died,Hometown,Bio,Links,Work,Medium,Size,Details,Gallery,Value,Acquired,Location,Distributed,Owner
+Works/Jean/Victoria Adams--65,65,Victoria Adams,1950,
+,"Columbus, OH","Landscape painter utilizing traditional oils; known for minimalist, luminous skyscapes and paintings that serve as meditations rather than narrative backdrops,,.",https://www.victoriaadamsart.com/,Things about Sky #43,Oil on Canvas,12x12,
+,Leach Gallery,2500,2003,Portland,2021,Jean
+Works/Unclaimed/David Airhart--50,50,David Airhart,
+,
+,
+,
+,https://www.stewartgallery.com/david-airhart,Cat Boy,Oil,
+,
+,Stewart,500,
+,Scottsdale,
+,
 
-size = 22 inches tall, base = 10x8.5"" (#115)",NA,25 in,Fine Art,Bill,Scottsdale,Artist Studio,Divide,8000,2005,2025
-works/Bill/George Carlson--116,116,"Carlson, George",Horses,Bronze,Bronze; acquired from Artist Studio; size = 7 1/2 in (#116),NA,7 1/2 in,Fine Art,Bill,Portland,Artist Studio,Completed,2800,2005,2021
-works/Kevin/Dale Chihuli--20,20,"Chihuli, Dale",Old Gold Spotted Seaform Set,Glass,"Glass, Blown glass set; acquired from Severn; size = 6x10x5; insured (#20)",Blown glass set,6x10x5,Fine Art,Kevin,Portland,Severn,Completed,10000,1997,2021
-works/Chris/William Coggins--1,1,"Coggins, William",Red Plains,Acrylic on Paper,Acrylic on Paper; acquired from Bowles Sorokko; size = 49x76; insured (#1),"Don't hang without plexiglass.  Keep out of direct sunlight.
-Could replace with glass but would require re-framing",49x76,Fine Art,Chris,Portland,Bowles Sorokko,Completed,5000,1990,2021
-works/Bill/James Coignard--35,35,"Coignard, James",Presence,Carborundum Gravure with Collage,Carbor Print; size = 46x36 framed; acquired from Nahan Galleries (#35),"#27 of 75
-C31985",100cm x 75cm,Fine Art,Bill,Scottsdale,Nahan Galleries,Divide,3000,1995,2025
-works/Chris/Kelly Cooper--39,39,"Cooper, Kelly",Evening Drink,Oil,"Oil, Oil, Pastel, Acrylic; acquired from Artist; size = 30x44 (#39)","Oil, Pastel, Acrylic",30x44,Fine Art,Chris,Portland,Artist,Completed,2300,1995,2021
-works/Kevin/Kelly Cooper--101,101,"Cooper, Kelly",Fall Sheep Migration,Pastel,Pastel; acquired from Janns; size = 27x31 (#101),NA,27x31,Fine Art,Kevin,Portland,Janns,Completed,950,1997,2021
-works/Jean/Kelly Cooper--102,102,"Cooper, Kelly",Angel 1995,Oil on Paper,Oil on Paper; size = 24x19; acquired from Janns (#102),NA,NA,Fine Art,Jean,Scottsdale,Janns,Divide,950,1996,2025
-works/Jean/Kelly Cooper--106,106,"Cooper, Kelly",Tuscan House,Pastel,Pastel; size = 11x13 (#200),NA,11x13,Fine Art,Jean,Portland,NA,Completed,750,NA,2021
-works/Cathy/Kelly Cooper--107,107,"Cooper, Kelly",Tulip in Majesty 95,Pastel,Pastel; size = 21x14; acquired from Janns (#107),NA,NA,Fine Art,Cathy,Scottsdale,Janns,Divide,650,1997,2025
-works/Bill/Tim Cotterill--226,226,"Cotterill, Tim",Ziggy,Bronze Cast,NA,"Colored Gekko, edition 148 of 1000, original price $1100-$1300","8""",NA,Bill,Scottsdale,NA,Divide,250,NA,2025
-works/Cathy/William Cumming--14,14,"Cumming, William",Runner,Watercolor,Watercolor; acquired from Woodside/Braeseth; size = 12x9 (#14),NA,12x9,Fine Art,Cathy,Portland,Woodside/Braeseth,Completed,1450,1991,2021
-works/Jean/Damian Charette--FS175,FS175,Damian Charette,Native American Chiefs,NA,NA,NA,NA,Fine Art,Jean,Scottsdale,NA,Divide,NA,NA,2025
-works/Cathy/Angela Mia De la Vega--217,217,"De la Vega, Angela Mia",Bronze girl “Joyful”,Bronze,"Bronze, 36/100 (#217)
-There are various versions of this piece, “Joyful”.  I think this one is the “mini” which is 13.5” tall.
-https://www.delavegastudios.com/artwork/19255-joyful-mini?artistsid=1012","Unreadable signature, ""long as joy..""?, 36/100",NA,Fine Art,Cathy,Portland,NA,Completed,NA,NA,2021
-works/Jean/Robert Devoe--18,18,"Devoe, Robert",Strollers Abroad,Oil on Canvas,Oil on Canvas; acquired from Severn; size = 11x22 (#18),NA,11x22,Fine Art,Jean,Portland,Severn,Completed,1475,1992,2021
-works/Unclaimed/Dewey--38,38,Dewey,Mt Hood,Oil,Oil; acquired from Artist (#38),NA,NA,Fine Art,NA,Scottsdale,Artist,Stays,2400,1992,NA
-works/Bill/Laddie John Dill--FS149,FS149,"Dill, Laddie John",Pair Cement Glass Oxides,NA,12x24” each; Can be hung horizontally or vertically,NA,NA,Fine Art,Bill,Scottsdale,NA,Divide,NA,NA,2025
-works/Jean/Jim Dine--215,215,"Dine, Jim",Body,Print,"Print, ""BD"" written on sticker.  2/30; acquired from Gallery 601 Boise (#215)","""BD"" written on sticker.  2/30",NA,Fine Art,Jean,Portland,Gallery 601 Boise,Completed,NA,NA,2021
-works/Unclaimed/John Douglas--12,12,"Douglas, John",Tibetan Pheasant,Print,NA,NA,23x21,NA,NA,Scottsdale,NJ,NA,1500,NA,NA
-works/Chris/David Earheart--223,223,"Earheart, David",Untitled,NA,; size = 14x14 (#223),NA,14x14,Fine Art,Chris,Portland,NA,Completed,NA,NA,2021
-works/Kevin/Ekooniak--8,8,Ekooniak,Spirit of Liberty,AP,AP; acquired from Trans Eastern Trad; size = 24x36 (#8),NA,24x36,Fine Art,Kevin,Scottsdale,Trans Eastern Trad,Divide,3000,1988,2025
-works/Cathy/Nissan Engel--3,3,"Engel, Nissan",Cristal Suite (4),Aquaprint,"Aquaprint, Four panels; acquired from Nahan (NY); size = 12x10 (#3)",Four panels,12x10,Fine Art,Cathy,Portland,Nahan (NY),Completed,2000,1991,2021
-works/Kevin/Martha Erlebacher--36,36,"Erlebacher, Martha",Still Life Supreme '83,Watercolor on Paper,"Watercolor on Paper, Watercolor on Paper; also available is the gallery poster featuring this work (currently with Bill); acquired from Janns; insured (#36)
-It appears the cost basis was $2950",Watercolor on Paper; also available is the gallery poster featuring this work (currently with Bill),NA,Fine Art,Kevin,Portland,Janns,Completed,2950,1997,2021
-works/Chris/Melinda Fellini--52,52,"Fellini, Melinda",Purple,Oil on Canvas,Oil on Canvas; acquired from Xanadu Gallery; size = 12x18 (#52),NA,12x18,Fine Art,Chris,Scottsdale,Xanadu Gallery,Divide,900,2003,2025
-works/Chris/Melinda Fellini--53,53,"Fellini, Melinda",Blue,Oil on Canvas,Oil on Canvas; acquired from Xanadu Gallery; size = 12x19 (#53),NA,12x19,Fine Art,Chris,Scottsdale,Xanadu Gallery,Divide,900,2003,2025
-works/Kevin/Melinda Fellini--54,54,"Fellini, Melinda",Yellow,Oil on Canvas,Oil on Canvas; acquired from Xanadu Gallery; size = 12x20 (#54),NA,12x20,Fine Art,Kevin,Scottsdale,Xanadu Gallery,Divide,900,2003,2025
-works/Chris/Melinda Fellini--55,55,"Fellini, Melinda",Red Sycamore,Oil on Canvas,Oil on Canvas; acquired from Xanadu Gallery; size = 24x36; insured (#55),NA,24x36,Fine Art,Chris,Scottsdale,Xanadu Gallery,Divide,3750,2003,2025
-works/Cathy/Melinda Fellini--66,66,"Fellini, Melinda",Dawn,Oil on Board,Oil on Board; acquired from Xanadu  Gallery; size = 30 inx24 in (#66),NA,30 inx24 in,Fine Art,Cathy,Portland,Xanadu  Gallery,Completed,3250,2005,2021
-works/Chris/Melinda Fellini--70,70,"Fellini, Melinda",Red Mountain Meadow,Oil on Canvas,Oil on Canvas; acquired from Xanadu; size = 48x36; insured (#70),NA,48x36,Fine Art,Chris,Portland,Xanadu,Completed,6000,2003,2021
-works/Jean/Caio Fonseca--73,73,"Fonseca, Caio",Dark Stripe,"Color spitbite, aquatint & soapgroujnd","Aquatint, 20/30; acquired from Addison/Ripley (DC); size = 33x41 (#73)",#20/30,33x41,Fine Art,Jean,Portland,Addison/Ripley (DC),Divide,2600,2004,2025
-works/Bill/Caio Fonseca--207,207,"Fonseca, Caio",Seven Strings Etching,"Color Spitbite, aquatint, softground","Print 33/50 2001; acquired from Idaho; size = 27x43 (#207); there is another piece by the same artist in Scottsdale, but I still cannot trace the origin.",Print 33/50 2001,27x43,Fine Art,Bill,Portland,David Floria,Completed,2200,NA,2021
-works/Cathy/Frank--42,42,Frank,Things Rising and Falling,Mixed,Mixed; acquired from Broschofsky; size = 26x37 (#42),NA,26x37,Fine Art,Cathy,Scottsdale,Broschofsky,Divide,1800,1994,2025
-works/Jean/Ernest Gartwaite--109,109,"Gartwaite, Ernest",Goo Spirit I & IV,Oil on Wood,"Oil on Wood, two works, unframed on curved wood; acquired from Severn; size = 10x14 (#109)","two works, unframed on curved wood",10x14,Fine Art,Jean,Portland,Severn,Completed,1100,1992,2021
-works/Cathy/Karl Gasser--23,23,"Gasser, Karl",Portrait of Mary,Silver Leaf on Wood Frame,Oil on Canvas; acquired from Artist; size = 28x22 ft; insured (#23),NA,28x22 ft,Fine Art,Cathy,Portland,Artist,Completed,4500,1987,2021
-works/Chris/Karl Gasser--24,24,"Gasser, Karl","From where, where to",Watercolor,Old man with a rose.  Watercolor; acquired from Artist; size = 29x22 in (#24),NA,29x22 in,Fine Art,Chris,Portland,Artist,Completed,3000,1985,2021
-works/Unclaimed/Karl Gasser--27,27,"Gasser, Karl",New York in Blue,Watercolor,NA,NA,21x29 in,NA,NA,Scottsdale,Artist,NA,2000,NA,NA
-works/Jean/Karl Gasser--28,28,"Gasser, Karl",Woman putting on her apron,Watercolor,Watercolor; acquired from Artist; size = 12x7 in (#28),NA,12x7 in,Fine Art,Jean,Portland,Artist,Completed,1250,1988,2021
-works/Chris/John Giarizzo--10,10,"Giarizzo, John",Piazza Novona '85,Graphite on paper,Graphite on paper; acquired from Boise Art Museum (#10),"Released 1985, bought 1990 for $240 from Boise Art Museum",NA,Fine Art,Chris,Portland,Boise Art Museum,Completed,3000,1990,2021
-works/Unclaimed/Frank Goitia--FS174,FS174,"Goitia, Frank",Boy in Chair,NA,"Painting hanging in bedroom at Mt Hood, originated in Boise Art Musuem.  https://downtownboise.org/do/frank-goitia-art-exhibition",NA,NA,Fine Art,NA,Portland,NA,Completed,NA,NA,NA
-works/Jean/Glenna Goodacre--67,67,"Goodacre, Glenna",Rio,Bronze,"Bronze, Edition 17 of 25; acquired from Nedra Matucci (NM); size = 24x25x11; insured (#67)",Edition 17 of 25,24x25x11,Fine Art,Jean,Portland,Nedra Matucci (NM),Completed,7600,2006,2021
-works/Jean/Morris Graves--19,19,"Graves, Morris",Five Persimmons,Print,"Lithograph, Limited 23/90; acquired from Severn; size = 23x29; insured (#19)","Full title: Five persimmons, five jewels, and flowering cabbage with morning glory",23x29,Fine Art,Jean,Portland,Severn,Completed,2200,1992,2021
-works/Bill/Farooq Hassan--208,208,"Hassan, Farooq",Two Faces in a Picture,Acrylic,Acrylic; acquired from Geezer Gallery; size = 17x14 (#208),NA,17x14,Fine Art,Bill,Portland,Geezer Gallery,Completed,675,NA,2021
-works/Chris/Hook--201,201,Hook,Water Under spirit Mountain,Acrylic,"Acrylic; acquired from Carson Gallery, Denver; size = 12x12 (#201)",NA,12x12,Fine Art,Chris,Portland,"Carson Gallery, Denver",Completed,1150,NA,2021
-works/Cathy/John Horejs--2,2,"Horejs, John",Spring Flowers,Oil on Canvas,Oil on Canvas; acquired from Brown (#2),NA,NA,Fine Art,Cathy,Portland,Brown,Divide,750,1991,2025
-works/Bill/John Horejs--6,6,"Horejs, John",Wildflower Garden,Oil on Canvas,"Oil on Canvas, Triptic; acquired from Kneeland; size = 31x42; insured (#6)",Triptic,31x42,Fine Art,Bill,Portland,Kneeland,Divide,4500,1990,2025
-works/Jean/John Horejs--7,7,"Horejs, John",Twilight Grazer,Oil,Oil; acquired from Artist; size = 31x42 (#7),NA,31x42,Fine Art,Jean,Scottsdale,Artist,Divide,2000,1990,2025
-works/Unclaimed/John Horejs--37,37,"Horejs, John",Boise Valley Summer,Oil on Canvas,"Oil on Canvas, Dimensions approximate; acquired from Brown; size = 18x58 (#37)",Was in the MarysWoods dining room.  I think it was donated.,18x58,Fine Art,NA,Portland,Brown,Completed,2500,1994,NA
-works/Unclaimed/Jia Na--11,11,Jia Na,Ori,Fabric,NA,Japanese Saki-Ori 18th century,40x24,NA,NA,Scottsdale,NJ,NA,4000,NA,NA
-works/Jean/Benjamin Jones--113,113,"Jones, Benjamin",Untitled,Mixed,Mixed; acquired from Stewart Gallery (#113),NA,NA,Fine Art,Jean,Scottsdale,Stewart Gallery,Divide,900,2004,2025
-works/Chris/Lorraine Jordon--61,61,"Jordon, Lorraine",Couleurs d'Automne,Oil on Canvas,Oil on Canvas; acquired from Brennan Gallery AZ; size = 13x19 (#61),NA,13x19,Fine Art,Chris,Scottsdale,Brennan Gallery AZ,Divide,1575,2003,2025
-works/Chris/Chris son Kayser--202,202,"Kayser, Chris (son)",Pumpkin,NA,; acquired from St. Pius X (#202),NA,NA,Fine Art,Chris,Portland,St. Pius X,Completed,5,NA,2021
-works/Kevin/Lotta--FS151,FS151,Lotta,Acrylic Block,NA,"12 acrylic (not glass) blocks, 8x8 each.  Mount with two nails each.",NA,NA,Fine Art,Kevin,Scottsdale,NA,Divide,NA,NA,2025
-works/Unclaimed/B Mariniom--FS156,FS156,"Mariniom, B",Fishie,NA,"Watercolor print 227/400 by Marriom or Warnism it’s hard to tell
-Size = 12x12",NA,NA,Fine Art,NA,Portland,NA,Completed,NA,1989,NA
-works/Cathy/Victor Martinez--205,205,"Martinez, Victor",Hilanderas #1658,Watercolor,"Watercolor, Found in insurance: ""#1658 original watercolor""; insured (#205)","Found in insurance: ""#1658 original watercolor""--painting of Mia?",NA,Fine Art,Cathy,Scottsdale,NA,Divide,9500,NA,2025
-works/Jean/Victor Martinez--206,206,"Martinez, Victor","painting of girl, Cuzco #1636",Oil,"Oil, Found in insurance; insured (#206)",Found in insurance,NA,Fine Art,Jean,Scottsdale,NA,Divide,5500,NA,2025
-works/Jean/Alden Mason--33,33,"Mason, Alden",September Bouquet,Acrylic,"Acrylic, Acrylic on Canvas; acquired from Severn; size = 42x36; insured (#33)",Acrylic on Canvas,42x36,Fine Art,Jean,Scottsdale,Severn,Divide,3850,1994,2025
-works/Chris/Mathews--5,5,Mathews,"Cowboy, Bedroll & Dog",Watercolor,Original watercolor almost certainly overinsured; compare with https://williammatthewsstudio.com/paintings/high-mountain-sage/; acquired from Broschofsky; size = 38x29; insured (#5),Original watercolor almost certainly overinsured; compare with https://williammatthewsstudio.com/paintings/high-mountain-sage/,38x29,Fine Art,Chris,Scottsdale,Broschofsky,Divide,9000,1991,2025
-works/Jean/Mathews--105,105,Mathews,Runaway,Iris Print,Iris Print 9; acquired from Broschofsky; size = 30x13 (#105),Iris Print 9,30x13,Fine Art,Jean,Scottsdale,Broschofsky,Divide,795,1994,2025
-works/Chris/Mathews--108,108,Mathews,Gathering Gear,Iris Print,"Iris Print, Iris Print 27; acquired from Broschofsky; size = 17x15 (#108)",Iris Print 27,17x15,Fine Art,Chris,Scottsdale,Broschofsky,Divide,595,1994,2025
-works/Chris/Mathews--111,111,Mathews,Mosey,Iris Print,"Iris Print, Iris Print 34; acquired from Borschofsky; size = 10x15 (#111)",Iris Print 34,10x15,Fine Art,Chris,Scottsdale,Borschofsky,Divide,375,1994,2025
-works/Bill/Ross Matteson--51,51,"Matteson, Ross",Squirrel,Bronze,Bronze; acquired from Matteson; size = 6 in (#51),NA,6 in,Fine Art,Bill,Scottsdale,Matteson,Divide,1200,2002,2025
-works/Bill/Andea Merrill--44,44,"Merrill, Andea",Pieces (Pair),Mixed Media,"Mixed Media, Mixed; acquired from Stewart (#44)",Mixed,NA,Fine Art,Bill,Portland,Stewart,Completed,1400,1993,2021
-works/Jean/Kerry Moosman--71,71,"Moosman, Kerry",3 Terra Cotta Vessels,Sculpture,"Pottery, located on glass shelves on east side of living room
-Acquired from Stewart Gallery (#71)
-https://kerrymoosman.com/section/482213-Ceramics.html",NA,NA,Fine Art,Jean,Scottsdale,Stewart Gallery,Divide,1400,2004,2025
-works/Kevin/William Morris--17,17,"Morris, William",Blown Glass Vessel,Blown Glass,Blown Glass; acquired from Friessen; insured (#17),NA,NA,Fine Art,Kevin,Portland,Friessen,Completed,15000,1992,2021
-works/Bob/Gwynn Murrill--29,29,"Murrill, Gwynn",Bronze Sitting Cat 96,Bronze,Bronze; acquired from Severn; size = 20x20x10; insured (#29),NA,20x20x10,Fine Art,Bob,Scottsdale,Severn,Divide,9500,1997,2025
-works/Bill/Gwynn Murrill--30,30,"Murrill, Gwynn",Triangle Cat,Bronze,Bronze; acquired from Severn; size = 8x28x15; insured (#30),Edition 2 of 9,8x28x15,Fine Art,Bill,Scottsdale,Severn,Divide,8500,1992,2025
-works/Bill/Renato Natali--21,21,"Natali, Renato",Seascape With Figures,Oil on Canvas,Oil on Canvas; acquired from G. Veneziano; size = 120x80cm (#21),Painted in 1940; Acquired for Morrison-Knudsen Office,120x80cm unframed,Fine Art,Bill,Portland,G. Veneziano,Completed,22000,1989,2021
-works/Bill/Renato Natali--25,25,"Natali, Renato",Seascape,Oil on Board,Oil on Board; acquired from G. Veneziano; size = 25x20cm; insured (#25),Painted in 1935; Acquired for Morrison-Knudsen Office,25x20cm,Fine Art,Bill,Portland,G. Veneziano,Completed,2000,1989,2021
-works/Bill/Renato Natali--26,26,"Natali, Renato",Vessel,Oil on Board,Oil on Board; acquired from G. Veneziano; size = 25x20cm (#26),"Painted in 1935
+Works/Bill/B Alvino--219,219,B Alvino,
+,
+,
+,
+,
+,lady sitting on rock,Metal,10 high,
+,
+,
+,
+,Portland,2021,Bill
+Works/Bill/Chuck Arnaldi--16,16,Chuck Arnaldi,
+,
+,
+,
+,
+,Untitled,Monoprint,12x10,"Inscribed on the back, ""For Don and Mary Sun Valley New Years 1992 -- Charles Arnaldi""",Ochi,1500,1992,Portland,2021,Bill
+Works/Jean/Donna Bernstein--228,228,Donna Bernstein,
+,
+,
+,
+,https://donnabernstein.com/,Field of Dreams,"Mixed media acrylics, ink on canvas",36x48,Have certificate of authenticity,Celebration of Fine Art/Donna B Fine Art,3000,2015,Scottsdale,2025,Jean
+Works/Jean/Donna Bernstein--204,204,Donna Bernstein,
+,
+,
+,
+,https://donnabernstein.com/,Lascaux,Mixed,
+,"Mixed media acrylics, ink on fine watercolor paper, custom framed; have certificates of authenticity",Celebration of Fine Art/Donna B Fine Art,2000,2015,Scottsdale,2025,Jean
+Works/Kevin/Sonja Bloomdahl--46,46,Sonja Bloomdahl,
+,
+,
+,
+,"https://sonjablomdahl.com/
+https://en.wikipedia.org/wiki/Sonja_Blomdahl",Glass Vase,Blown Glass,15 in,
+,Boise Art Museum,8000,2002,Scottsdale,2025,Kevin
+Works/Bill/Robin Branham--40,40,Robin Branham,
+,
+,"Malibu, CA","Painter working with acrylics and polymers on large-scale surfaces; known for a process of 'planned abandon' focusing on surface and texture,.",https://www.robinbranham.com/bio,The Stick,Oil on Steel,5 ft,Misidentified earlier as double blue wave by Jensen,Celebration of Fine Art,1600,2010,Scottsdale,2025,Bill
+Works/Bob/George Budnick--103,103,George Budnick,
+,
+,
+,
+,
+,Georgia O'Keefe Portrait,Photograph,
+,Sitting Portrait,Bishop (Scottsdale),860,1998,Portland,2021,Bob
+Works/Chris/George Budnick--FS37,FS37,George Budnick,
+,
+,
+,
+,
+,Georgia O'Keefe,Photograph,
+,Portrait at work,Bishop (Scottsdale),860,2002,Portland,2025,Chris
+Works/Cathy/Robert Burt--68,68,Robert Burt,
+,
+,
+,"Acrylic painter known for works inspired by the open road, such as the 'Cruise Control' series,.",https://renaissancerules.wordpress.com/2015/02/24/robert-burt-artist-of-mystery-adventure-and-joy/,Mexican Road Trip,Acrylic,48x48,
+,Xanadu  Gallery,5250,2007,Scottsdale,2025,Cathy
+Works/Jean/Robert Burt--112,112,Robert Burt,
+,
+,
+,"Acrylic painter known for works inspired by the open road, such as the 'Cruise Control' series,.",https://renaissancerules.wordpress.com/2015/02/24/robert-burt-artist-of-mystery-adventure-and-joy/,Conversation,Acrylic,28x22,
+,Xanadu,1350,2005,Scottsdale,2025,Jean
+Works/Bill/George Carlson--114,114,George Carlson,1940,
+,"Elmhurst, IL","Sculptor and painter educated at the Art Institute of Chicago; known for bronzes, pastels, and Western themes, particularly those depicting the Tarahumara people,,.",https://www.georgecarlsonart.com/,Still Point,Bronze,25 in,Edition 12 of 21.  On bottom is “5293” and “Teresa”,Artist Studio,8000,2005,Portland,2021,Bill
+Works/Bill/George Carlson--115,115,George Carlson,1940,
+,"Elmhurst, IL","Sculptor and painter educated at the Art Institute of Chicago; known for bronzes, pastels, and Western themes, particularly those depicting the Tarahumara people,,.",https://www.georgecarlsonart.com/,Interlude,Bronze,25 in,Edition 12 of 21.  On bottom says “Emily Standing” and “5850” and “5852”,Artist Studio,8000,2005,Scottsdale,2025,Bill
+Works/Bill/George Carlson--116,116,George Carlson,1940,
+,"Elmhurst, IL","Sculptor and painter educated at the Art Institute of Chicago; known for bronzes, pastels, and Western themes, particularly those depicting the Tarahumara people,,.","https://www.georgecarlsonart.com/
+https://owingsgallery.com/viewing-room/5-george-carlson/",Horses,Bronze,7 1/2 in,
+,Artist Studio,2800,2005,Portland,2021,Bill
+Works/Kevin/Dale Chihuli--20,20,Dale Chihuli,
+,
+,
+,
+,https://www.chihuly.com/work/seaforms,Old Gold Spotted Seaform Set,Glass,6x10x5,Blown glass set of two,Severn,10000,1997,Portland,2021,Kevin
+Works/Chris/William Coggins--1,1,William Coggins,
+,
+,
+,
+,
+,Red Plains,Acrylic on Paper,49x76,"Don't hang without plexiglass.  Keep out of direct sunlight.
+Could replace with glass but would require re-framing",Bowles Sorokko,5000,1990,Portland,2021,Chris
+Works/Bill/James Coignard--35,35,James Coignard,
+,
+,
+,
+,
+,Presence,Carborundum Gravure with Collage,100cm x 75cm,"#27 of 75
+C31985",Nahan Galleries,3000,1995,Scottsdale,2025,Bill
+Works/Chris/Kelly Cooper--39,39,Kelly Cooper,
+,
+,
+,
+,
+,Evening Drink,"Oil, Oil, Pastel, Acrylic",30x44,"Oil, Pastel, Acrylic",Artist,2300,1995,Portland,2021,Chris
+Works/Kevin/Kelly Cooper--101,101,Kelly Cooper,
+,
+,
+,
+,
+,Fall Sheep Migration,Pastel,27x31,
+,Janns,950,1997,Portland,2021,Kevin
+Works/Jean/Kelly Cooper--102,102,Kelly Cooper,
+,
+,
+,
+,
+,Angel 1995,Oil on Paper,24x19,
+,Janns,950,1996,Scottsdale,2025,Jean
+Works/Jean/Kelly Cooper--106,106,Kelly Cooper,
+,
+,
+,
+,
+,Tuscan House,Pastel,11x13,
+,Janns,750,
+,Portland,2021,Jean
+Works/Cathy/Kelly Cooper--107,107,Kelly Cooper,
+,
+,
+,
+,
+,Tulip in Majesty 95,Pastel,21x14,
+,Janns,650,1997,Scottsdale,2025,Cathy
+Works/Bill/Tim Cotterill--226,226,Tim Cotterill,
+,
+,United Kingdom,"Known as 'The Frogman,' a British master artist who creates bronze sculptures of frogs using the lost wax method,.",
+,Ziggy,Bronze Cast,"8""","Colored Gekko, edition 148 of 1000, original price $1100-$1300",
+,250,
+,Scottsdale,2025,Bill
+Works/Cathy/William Cumming--14,14,William Cumming,
+,
+,
+,Watercolorist known for works such as 'Runner'.,
+,Runner,Watercolor,12x9,
+,Woodside/Braeseth,1450,1991,Portland,2021,Cathy
+Works/Jean/Damian Charette--FS175,FS175,Damian Charette,
+,
+,
+,
+,
+,Native American Chiefs,
+,
+,
+,
+,
+,
+,Scottsdale,2025,Jean
+Works/Cathy/Angela Mia De la Vega--217,217,Angela Mia De la Vega,
+,
+,
+,
+,https://www.delavegastudios.com/artwork/19255-joyful-mini?artistsid=1012,Bronze girl “Joyful”,Bronze,
+,Edition 36/100 (#217),
+,
+,
+,Portland,2021,Cathy
+Works/Jean/Robert Devoe--18,18,Robert Devoe,
+,
+,
+,
+,
+,Strollers Abroad,Oil on Canvas,11x22,"There are various versions of this piece, “Joyful”.  I think this one is the “mini” which is 13.5” tall.",Severn,1475,1992,Portland,2021,Jean
+Works/Unclaimed/Carolyn Dewey--38,38,Carolyn Dewey,
+,
+,"McMinville, OR",Painter and functional art designer; abstract impressionist landscapes inspired by nature's landforms using oils and palette knives.,
+,Mt Hood,Oil,
+,At Mt. Hood,Artist,2400,1992,Scottsdale,
+,
+
+Works/Bill/Laddie John Dill--FS149,FS149,Laddie John Dill,1943,
+,"Long Beach, CA","'Light and Space' artist using neon, cement, glass, and indigenous materials; influenced by Rauschenberg and earthworks,,.",https://www.laddiejohndill.com/biography,Pair Cement Glass Oxides,
+,2 - 12x24”,Can be hung horizontally or vertically,
+,
+,
+,Scottsdale,2025,Bill
+Works/Jean/Jim Dine--215,215,Jim Dine,1935,
+,"Cincinnati, OH","Pop Art and Neo-Dada artist known for 'Happenings' and the use of everyday objects (robes, tools) in painting, printmaking, and sculpture,,.","https://www.richardgraygallery.com/artists/jim-dine
+https://en.wikipedia.org/wiki/Jim_Dine",Body,Print,
+,"""BD"" written on sticker.  2/30",Gallery 601 Boise,
+,
+,Portland,2021,Jean
+Works/Unclaimed/John Douglas--12,12,John Douglas,
+,
+,
+,
+,
+,Tibetan Pheasant,Print,23x21,Unclear where this ended up,NJ,1500,
+,Scottsdale,
+,
+
+Works/Chris/David Earheart--223,223,David Earheart,
+,
+,
+,
+,
+,Untitled,
+,14x14,
+,
+,
+,
+,Portland,2021,Chris
+Works/Kevin/Norman Ekooniak--8,8,Norman Ekooniak,
+,
+,
+,
+,"https://www.cbc.ca/news/canada/ottawa/inuit-artist-normee-ekoomiak-dies-1.809033#:~:text=Normee Ekoomiak was a prolific Inuit artist,and struggled with addictions throughout his life.",Spirit of Liberty,AP,24x36,
+,Trans Eastern Trad,3000,1988,Scottsdale,2025,Kevin
+Works/Cathy/Nissan Engel--3,3,Nissan Engel,1931,
+,Israel,"Artist known for a unique style of collage and engraving (Collographs), often creating intense blocks of color with musical themes.",
+,Cristal Suite (4),Aquaprint,12x10,Four panels,Nahan (NY),2000,1991,Portland,2021,Cathy
+Works/Kevin/Martha Erlebacher--36,36,Martha Erlebacher,
+,
+,
+,
+,"https://www.invaluable.com/auction-lot/martha-mayer-erlebacher-still-life-supreme-poster-228-c-a0443f59dd?srsltid=AfmBOorNVVMcSnK1gMAUBfxpP7QOfk1tNlCSW56Ws2UvbEOyF73Q2yad
+https://www.artforum.com/events/martha-meyer-erlebacher-213227/",Still Life Supreme '83,Watercolor on Paper,
+,Comes with the gallery poster featuring this work as well as a color transparency used for reproductions.  It appears the cost basis was $2950.,Janns,2950,1997,Portland,2021,Kevin
+Works/Chris/Melinda Fellini--70,70,Melinda Fellini,
+,
+,
+,"Oil and encaustic painter creating 'visual poetry' and landscapes luminous and organic in nature,.",https://art.xanadugallery.com/collections/melinda-fellini?srsltid=AfmBOoq4Wktw7XMxaYek877soXSrK0NSfQEUnpgQ9-M6HBFWSTgXF5oE,Red Mountain Meadow,Oil on Canvas,48x36,
+,Xanadu,6000,2003,Portland,2021,Chris
+Works/Cathy/Melinda Fellini--66,66,Melinda Fellini,
+,
+,
+,"Oil and encaustic painter creating 'visual poetry' and landscapes luminous and organic in nature,.",https://art.xanadugallery.com/collections/melinda-fellini?srsltid=AfmBOoqs-Xh2emHIcMpi_rblOB9zloY3aEjNRvpMpxDMvWfn4ycbfXMF,Dawn,Oil on Board,30 inx24 in,
+,Xanadu  Gallery,3250,2005,Portland,2021,Cathy
+Works/Chris/Melinda Fellini--55,55,Melinda Fellini,
+,
+,
+,"Oil and encaustic painter creating 'visual poetry' and landscapes luminous and organic in nature,.",https://art.xanadugallery.com/collections/melinda-fellini?srsltid=AfmBOoqs-Xh2emHIcMpi_rblOB9zloY3aEjNRvpMpxDMvWfn4ycbfXMF,Red Sycamore,Oil on Canvas,24x36,
+,Xanadu Gallery,3750,2003,Scottsdale,2025,Chris
+Works/Chris/Melinda Fellini--52,52,Melinda Fellini,
+,
+,
+,"Oil and encaustic painter creating 'visual poetry' and landscapes luminous and organic in nature,.",https://art.xanadugallery.com/collections/melinda-fellini?srsltid=AfmBOoqs-Xh2emHIcMpi_rblOB9zloY3aEjNRvpMpxDMvWfn4ycbfXMF,Purple,Oil on Canvas,12x18,
+,Xanadu Gallery,900,2003,Scottsdale,2025,Chris
+Works/Chris/Melinda Fellini--53,53,Melinda Fellini,
+,
+,
+,"Oil and encaustic painter creating 'visual poetry' and landscapes luminous and organic in nature,.",https://art.xanadugallery.com/collections/melinda-fellini?srsltid=AfmBOoqs-Xh2emHIcMpi_rblOB9zloY3aEjNRvpMpxDMvWfn4ycbfXMF,Blue,Oil on Canvas,12x19,
+,Xanadu Gallery,900,2003,Scottsdale,2025,Chris
+Works/Kevin/Melinda Fellini--54,54,Melinda Fellini,
+,
+,
+,"Oil and encaustic painter creating 'visual poetry' and landscapes luminous and organic in nature,.",https://art.xanadugallery.com/collections/melinda-fellini?srsltid=AfmBOoqs-Xh2emHIcMpi_rblOB9zloY3aEjNRvpMpxDMvWfn4ycbfXMF,Yellow,Oil on Canvas,12x20,
+,Xanadu Gallery,900,2003,Scottsdale,2025,Kevin
+Works/Jean/Caio Fonseca--73,73,Caio Fonseca,
+,
+,
+,"Painter and printmaker working in color intaglio and aquatint; explores forms and geometry akin to musical structures,.",
+,Dark Stripe,"Color spitbite, aquatint & soapgroujnd",33x41,#20/30,Addison/Ripley (DC),2600,2004,Portland,2025,Jean
+Works/Bill/Caio Fonseca--207,207,Caio Fonseca,
+,
+,
+,"Painter and printmaker working in color intaglio and aquatint; explores forms and geometry akin to musical structures,.",
+,Seven Strings Etching,"Color Spitbite, aquatint, softground",27x43,"Print 33/50 2001.  Acquired from Idaho; there is another piece by the same artist in Scottsdale, but I still cannot trace the origin.",David Floria,2200,
+,Portland,2021,Bill
+Works/Cathy/Valerie Frank--42,42,Valerie Frank,
+,
+,"Santa Fe, NM","Mixed media artist and painter (miniatures and large scale) often exploring biological, botanical, and anatomical themes,.",
+,Things Rising and Falling,Mixed,26x37,
+,Broschofsky,1800,1994,Scottsdale,2025,Cathy
+Works/Jean/Ernest Gartwaite--109,109,Ernest Gartwaite,
+,
+,
+,
+,
+,Mohegan Spirit I & IV,Oil on Wood,10x14,"two works, unframed on curved wood",Severn,1100,1992,Portland,2021,Jean
+Works/Cathy/Karl Gasser--23,23,Karl Gasser,1948,
+,"Pardell, Italy","Painter who uses a wet-in-wet watercolor technique to depict rural life and social statements regarding the environment,.",
+,Portrait of Mary,Silver Leaf on Wood Frame,28x22 ft,Mary Kayser,Artist,4500,1987,Portland,2021,Cathy
+Works/Chris/Karl Gasser--24,24,Karl Gasser,1948,
+,"Pardell, Italy","Painter who uses a wet-in-wet watercolor technique to depict rural life and social statements regarding the environment,.",
+,"From where, where to",Watercolor,29x22 in,Old man with a rose.,Artist,3000,1985,Portland,2021,Chris
+Works/Jean/Karl Gasser--28,28,Karl Gasser,1948,
+,"Pardell, Italy","Painter who uses a wet-in-wet watercolor technique to depict rural life and social statements regarding the environment,.",
+,Woman putting on her apron,Watercolor,12x7 in,
+,Artist,1250,1988,Portland,2021,Jean
+Works/Unclaimed/Karl Gasser--27,27,Karl Gasser,1948,
+,"Pardell, Italy","Painter who uses a wet-in-wet watercolor technique to depict rural life and social statements regarding the environment,.",
+,New York in Blue,Watercolor,21x29 in,
+,Artist,2000,
+,Scottsdale,
+,
+
+Works/Chris/John Giarizzo--10,10,John Giarizzo,
+,
+,
+,
+,
+,Piazza Novona '85,Graphite on paper,
+,"Released 1985, bought 1990 for $240 from Boise Art Museum",Boise Art Museum,3000,1990,Portland,2021,Chris
+Works/Unclaimed/Frank Goitia--FS174,FS174,Frank Goitia,
+,
+,
+,
+,https://downtownboise.org/do/frank-goitia-art-exhibition,Boy in Chair,
+,
+,Painting hanging in bedroom at Mt Hood,Boise Art Museum,
+,
+,Portland,
+,
+
+Works/Jean/Glenna Goodacre--67,67,Glenna Goodacre,1939,
+,"Lubbock, TX","Sculptor known for bronze figures, such as the piece 'Rio',.",https://glennagoodacre.com/,Rio,Bronze,24x25x11,Edition 17 of 25,Nedra Matucci (NM),7600,2006,Portland,2021,Jean
+Works/Jean/Morris Graves--19,19,Morris Graves,
+,
+,
+,Visionary artist from the Pacific Northwest; known for metaphysical nature paintings rooted in solitude and Zen Buddhism.,https://en.wikipedia.org/wiki/Morris_Graves,Five Persimmons,Lithograph,23x29,"Edition 23 of 90; Full title: Five persimmons, five jewels, and flowering cabbage with morning glory.",Severn,2200,1992,Portland,2021,Jean
+Works/Bill/Farooq Hassan--208,208,Farooq Hassan,~1939,
+,"Baghdad, Iraq","Master artist and stamp designer who rebuilt his career in Portland, Oregon after fleeing war in Iraq; known for capturing colorful scenes of daily life,.",http://www.villageframeandgallery.com/blog/featured-artist-farooq-hassan/,Two Faces in a Picture,Acrylic,17x14,
+,Geezer Gallery,675,
+,Portland,2021,Bill
+Works/Chris/Hook--201,201,Hook,
+,
+,
+,
+,
+,Water Under spirit Mountain,Acrylic,12x12,
+,"Carson Gallery, Denver",1150,
+,Portland,2021,Chris
+Works/Unclaimed/John Horejs--37,37,John Horejs,1949,
+,"Twin Falls, ID","Oil painter using a blend of realism and impressionism; known for landscapes and garden scenes,,.",https://www.johnhorejs.com/About/index.php,Boise Valley Summer,Oil on Canvas,18x58,Was in the MarysWoods dining room.  Now at Mt Hood.,Brown,2500,1994,Portland,
+,
+
+Works/Jean/John Horejs--7,7,John Horejs,1949,
+,"Twin Falls, ID","Oil painter using a blend of realism and impressionism; known for landscapes and garden scenes,,.",
+,Twilight Grazer,Oil,31x42,
+,Artist,2000,1990,Scottsdale,2025,Jean
+Works/Bill/John Horejs--6,6,John Horejs,1949,
+,"Twin Falls, ID","Oil painter using a blend of realism and impressionism; known for landscapes and garden scenes,,.",
+,Wildflower Garden,Oil on Canvas,31x42,Triptic,Kneeland,4500,1990,Portland,2025,Bill
+Works/Cathy/John Horejs--2,2,John Horejs,1949,
+,"Twin Falls, ID","Oil painter using a blend of realism and impressionism; known for landscapes and garden scenes,,.",
+,Spring Flowers,Oil on Canvas,
+,
+,Brown,750,1991,Portland,2025,Cathy
+Works/Jean/Benjamin Jones--113,113,Benjamin Jones,
+,
+,
+,
+,
+,Untitled,Mixed,
+,
+,Stewart Gallery,900,2004,Scottsdale,2025,Jean
+Works/Chris/Lorraine Jordon--61,61,Lorraine Jordon,
+,
+,
+,
+,
+,Couleurs d'Automne,Oil on Canvas,13x19,
+,Brennan Gallery AZ,1575,2003,Scottsdale,2025,Chris
+Works/Kevin/Lotta--FS151,FS151,Lotta,
+,
+,
+,
+,
+,Acrylic Block,12 acrylic blocks,12 - 8x8,Mount with two nails each.,
+,
+,
+,Scottsdale,2025,Kevin
+Works/Cathy/Victor Martinez--205,205,Victor Martinez,
+,
+,"Arequipa, Peru",Watercolor and oil painter recognized for capturing the life of Native people in Peru.,http://victormartinez.com/#about,Hilanderas #1658,Watercolor,
+,
+,
+,9500,
+,Scottsdale,2025,Cathy
+Works/Jean/Victor Martinez--206,206,Victor Martinez,
+,
+,"Arequipa, Peru",Watercolor and oil painter recognized for capturing the life of Native people in Peru.,http://victormartinez.com/#about,"painting of girl, Cuzco #1636",Oil,
+,Found in insurance,
+,5500,
+,Scottsdale,2025,Jean
+Works/Unclaimed/Victor Martinez--FS152,FS152,Victor Martinez,
+,
+,"Arequipa, Peru",Watercolor and oil painter recognized for capturing the life of Native people in Peru.,http://victormartinez.com/#about,Mia,Watercolor,
+,Commissioned Painting,
+,
+,
+,Scottsdale,
+,
+
+Works/Jean/Alden Mason--33,33,Alden Mason,1919,
+,"Everett, WA",Painter and professor at the University of Washington; known for his 'Burpee Garden' series and squeeze-bottle painting technique.,
+,September Bouquet,Acrylic on Canvas,42x36,
+,Severn,3850,1994,Scottsdale,2025,Jean
+Works/Bill/Ross Matteson--51,51,Ross Matteson,
+,
+,"Olympia, WA","Sculptor working in bronze, known for wildlife pieces like 'Squirrel Curl'.",https://williammatthewsstudio.com/about/,Squirrel,Bronze,6 in,
+,Matteson,1200,2002,Scottsdale,2025,Bill
+Works/Chris/William Matthews--5,5,William Matthews,
+,
+,"Denver, CO","Watercolor painter known for depictions of the American West, album covers, and murals,.",https://williammatthewsstudio.com/paintings/high-mountain-sage/,"Cowboy, Bedroll & Dog",Watercolor,38x29,Compare with https://williammatthewsstudio.com/paintings/high-mountain-sage/,Broschofsky,9000,1991,Scottsdale,2025,Chris
+Works/Jean/William Matthews--105,105,William Matthews,
+,
+,"Denver, CO","Watercolor painter known for depictions of the American West, album covers, and murals,.",https://williammatthewsstudio.com/about/,Runaway,Iris Print,30x13,Iris Print 9,Broschofsky,795,1994,Scottsdale,2025,Jean
+Works/Chris/William Matthews--108,108,William Matthews,
+,
+,"Denver, CO","Watercolor painter known for depictions of the American West, album covers, and murals,.",https://williammatthewsstudio.com/about/,Gathering Gear,Iris Print,17x15,Iris Print 27,Broschofsky,595,1994,Scottsdale,2025,Chris
+Works/Chris/William Matthews--111,111,William Matthews,
+,
+,"Denver, CO","Watercolor painter known for depictions of the American West, album covers, and murals,.",https://williammatthewsstudio.com/about/,Mosey,Iris Print,10x15,Iris Print 34,Borschofsky,375,1994,Scottsdale,2025,Chris
+Works/Bill/Andea Merrill--44,44,Andea Merrill,
+,
+,
+,
+,
+,Pieces (Pair),Mixed Media,
+,Mixed,Stewart,1400,1993,Portland,2021,Bill
+Works/Jean/Kerry Moosman--71,71,Kerry Moosman,1951,
+,"Boise, ID","Ceramist and art instructor known for large, hand-built earthen vessels and burnished terra-cotta,.",https://kerrymoosman.com/section/482213-Ceramics.html,3 Terra Cotta Vessels,Glazed Ceramic,
+,
+,Stewart Gallery,1400,2004,Scottsdale,2025,Jean
+Works/Kevin/William Morris--17,17,William Morris,1957,
+,"Carmel, CA","Glass artist and former gaffer for Chihuly; renowned for vessels exploring archeological and mythological themes using unique surface treatments,,.","https://www.invaluable.com/artist/morris-william-f7tca34y3t/sold-at-auction-prices/?srsltid=AfmBOor0OgZjYQucDV9tLLtXdhpf08nNZ7aVwOnZ2hEsLIL6qJHkyMhO
+https://www.wmorris.com/",Blown Glass Vessel,Blown Glass,
+,
+,Friessen,15000,1992,Portland,2021,Kevin
+Works/Bob/Gwynn Murrill--29,29,Gwynn Murrill,1942,
+,"Los Angeles, CA","Sculptor known for sleek, abstract animal figures (particularly cats) created in bronze, wood, and marble,,.","https://www.murrillsculpture.com/
+https://www.murrillsculpture.com/cats",Bronze Sitting Cat 96,Bronze,20x20x10,
+,Severn,9500,1997,Scottsdale,2025,Bob
+Works/Bill/Gwynn Murrill--30,30,Gwynn Murrill,1942,
+,"Los Angeles, CA","Sculptor known for sleek, abstract animal figures (particularly cats) created in bronze, wood, and marble,,.","https://www.murrillsculpture.com/
+https://www.murrillsculpture.com/cats",Triangle Cat,Bronze,8x28x15,Edition 2 of 9,Severn,8500,1992,Scottsdale,2025,Bill
+Works/Unclaimed/JIa Na--11,11,JIa Na,
+,
+,
+,
+,https://www.askart.com/artist/Jia_Na/11362279/Jia_Na.aspx,Ori,Fabric,40x24,18th Century,NJ,4000,
+,Scottsdale,
+,
+
+Works/Bill/Renato Natali--21,21,Renato Natali,1883,1979,"Livorno, Italy",Post-Macchiaioli painter who depicted the proletarian neighborhoods of Livorno and cabaret scenes.,"https://en.wikipedia.org/wiki/Renato_Natali
+https://www.invaluable.com/artist/natali-renato-ehw4b2cu0i/sold-at-auction-prices/?srsltid=AfmBOorZXte_3v2KwT0Tet0X5dk_JHDtpQyVSYnKMqYSxZf0cVBKfWIR",Seascape With Figures,Oil on Canvas,120x80cm unframed,Painted in 1940; Acquired for Morrison-Knudsen Office,G. Veneziano,22000,1989,Portland,2021,Bill
+Works/Bill/Renato Natali--25,25,Renato Natali,1883,1979,"Livorno, Italy",Post-Macchiaioli painter who depicted the proletarian neighborhoods of Livorno and cabaret scenes.,https://en.wikipedia.org/wiki/Renato_Natali,Seascape,Oil on Board,25x20cm,Painted in 1935; Acquired for Morrison-Knudsen Office,G. Veneziano,2000,1989,Portland,2021,Bill
+Works/Bill/Renato Natali--26,26,Renato Natali,1883,1979,"Livorno, Italy",Post-Macchiaioli painter who depicted the proletarian neighborhoods of Livorno and cabaret scenes.,https://en.wikipedia.org/wiki/Renato_Natali,Vessel,Oil on Board,25x20cm,"Painted in 1935
 From Veneziano Via Del Foss, '56
-Florence, Italy",25x20cm,Fine Art,Bill,Portland,G. Veneziano,Completed,2000,1989,2021
-works/Cathy/Eileen Neff--48,48,"Neff, Eileen",Almost #3,Photograph,Photograph; acquired from Locks Gallery PA; size = 56x41; insured (#48),NA,56x41,Fine Art,Cathy,Scottsdale,Locks Gallery PA,Divide,6000,2002,2025
-works/Jean/Bruce Newell--31,31,"Newell, Bruce",Bronze Table,Bronze,"Bronze; acquired from Anne Reed; 30 high, 14 deep, 60 long; insured (#31)",NA,NA,Fine Art,Jean,Scottsdale,Anne Reed,Divide,6500,1997,2025
-works/Cathy/Newy Fagan--FS123,FS123,Newy Fagan,Fused Glass Horse,NA,NA,NA,NA,Fine Art,Cathy,Portland,NA,Completed,NA,NA,2021
-works/Cathy/Max Papart--15,15,"Papart, Max",Renaissance,Aquatint,"Aquatint; 37/135 acquired from Nahan; size = 34x28, 39x32 framed  (#15)",NA,34x28,Fine Art,Cathy,Scottsdale,Nahan,Divide,1750,1992,2025
-works/Bill/Max Papart--41,41,"Papart, Max",Janus,Carborundum Print,Carborundum Print; size = 37x29 framed; acquired from Nahan Galleries (#41),NA,NA,Fine Art,Bill,Scottsdale,Nahan Galleries,Divide,1800,1995,2025
-works/Kevin/Bryce Pettit--FS153,FS153,"Pettit, Bryce",Mice and Cheese,NA,"Seven bronze mice, plus little metal houses and a wood block of cheese.  Some of these may belong to Cathy.",NA,NA,Art/collectibles,Kevin,Scottsdale,NA,Divide,NA,NA,2025
-works/Bill/Pablo Picasso--22,22,"Picasso, Pablo",Blind Minotaur,Etching signed,"Etching signed, Full title: ""Blind Minotaur Guided in the Night by a Little Girl with a Pigeon""; acquired from Allied Collection; size = 24x30cm; insured (#22)","Full title: ""Blind Minotaur Guided in the Night by a Little Girl with a Pigeon""
-Acquired for $7000 in 1988; appraised at $8000 in 1989",24x30cm,Fine Art,Bill,Portland,Allied Collection,Completed,8000,1988,2021
-works/Unclaimed/Gary Price--56,56,"Price, Gary",Nature's Friend Frog,Bronze,Bronze; acquired from Xanadu Gallery; size = 4 ft; insured (#56),NA,4 ft,Fine Art,NA,Scottsdale,Xanadu Gallery,Stays,8700,2003,NA
-works/Chris/James Provisor--212,212,"Provisor, James",Star Trap and Star Throw,Print,"Prints, Star Trap is 3/15 and has an issue with the framing.  At some point the painting came loose from the mat.  Weirdly, it looks like there is another print behind it.  The frame probably needs to opened up to fix this.
+Florence, Italy",G. Veneziano,2000,1989,Portland,2021,Bill
+Works/Cathy/Eileen Neff--48,48,Eileen Neff,
+,
+,
+,
+,
+,Almost #3,Photograph,56x41,
+,Locks Gallery PA,6000,2002,Scottsdale,2025,Cathy
+Works/Jean/Bruce Newell--31,31,Bruce Newell,1939,
+,
+,"Sculptor working in bronze, known for creating functional art such as bronze tables,.",
+,Bronze Table,Bronze,
+,
+,Anne Reed,6500,1997,Scottsdale,2025,Jean
+Works/Cathy/Newy Fagan--FS123,FS123,Newy Fagan,
+,
+,
+,
+,
+,Fused Glass Horse,
+,
+,
+,
+,
+,
+,Portland,2021,Cathy
+Works/Bill/Max Papart--41,41,Max Papart,1911,1994,"Marseilles, France","Painter and printmaker known for a surreal Pop Art interpretation of Cubism and carborundum etchings,.",https://www.thematthewsgallery.com/artists/196-max-papart/biography/,Janus,Carborundum Print,
+,
+,Nahan Galleries,1800,1995,Scottsdale,2025,Bill
+Works/Cathy/Max Papart--15,15,Max Papart,1911,1994,"Marseilles, France","Painter and printmaker known for a surreal Pop Art interpretation of Cubism and carborundum etchings,.",https://www.thematthewsgallery.com/artists/196-max-papart/biography/,Renaissance,Aquatint,34x28,Edition 37 of 135,Nahan,1750,1992,Scottsdale,2025,Cathy
+Works/Kevin/Bryce Pettit--FS153,FS153,Bryce Pettit,
+,
+,
+,
+,
+,Mice and Cheese,Bronze and Wood,
+,"Seven bronze mice, plus little metal houses and a wood block of cheese.",
+,
+,
+,Scottsdale,2025,Kevin
+Works/Bill/Pablo Picasso--22,22,Pablo Picasso,1881,1973,Spain,"Major 20th-century artist; printmaker and painter; creator of the 'Vollard Suite' featuring the Minotaur motif,,.","https://www.moma.org/collection/works/65357
+https://scma.smith.edu/blog/picasso-and-minotaur",Blind Minotaur,Etching,33.65cm x 44.45cm,"""Blind Minotaur Guided in the Night by a Little Girl with a Pigeon”. Signed, unnumbered.  
+1934
+Acquired for $7000 in 1988; appraised at $8000 in 1989",Allied Collection,8000,1988,Portland,2021,Bill
+Works/Unclaimed/Gary Price--56,56,Gary Price,
+,
+,
+,
+,
+,Nature's Friend Frog,Bronze,4 ft,
+,Xanadu Gallery,8700,2003,Scottsdale,
+,
 
-Star Throw is 2/15.
+Works/Chris/James Provisor--212,212,James Provisor,
+,
+,
+,
+,
+,Star Trap and Star Throw,Print,2 - 24x20,"Prints, Star Trap is 3/15 and has an issue with the framing.  At some point the painting came loose from the mat.  Weirdly, it looks like there is another print behind it.  The frame probably needs to opened up to fix this.
 
-Acquired from Gallery 601 Boise; size = 24x20 framed (#210)",3/15 weird frame; print sits loose in front of something ese,NA,Fine Art,Chris,Portland,Gallery 601 Boise,Completed,NA,NA,2021
-works/Unclaimed/Shelley Rapp--69,69,"Rapp, Shelley",Indigo blue,Fiber Sculpture,Fiber Sculpture; acquired from Artist (#69),NA,NA,Fine Art,NA,Scottsdale,Artist,Stays,2051,2007,NA
-works/Cathy/Laura Regan--FS112,FS112,"Regan, Laura",Untitled,NA,"Print or watercolor, ID-013; size = 39x34 framed (#209)",NA,NA,Fine Art,Cathy,Portland,NA,Completed,NA,NA,2021
-works/Chris/Reshon--13,13,Reshon,Waterfowl (Two),Watercolor,Watercolor; One piece is in the big bedroom and the other is stored in the garage against the east wall; acquired from NJ; size = 14x21; insured (#13),Resnon or Reshon?,14x21,Fine Art,Chris,Scottsdale,NJ,Divide,4000,1985,2025
-works/Bill/Ridgeway--221,221,Ridgeway,Analog Clock,NA,Analog table top wind up clock (#221),Analog table top wind up clock,NA,Fine Art,Bill,Portland,NA,Completed,2750,NA,2021
-works/Bill/Mary Roland--4,4,"Roland, Mary",Wilton Forest,Oil on Paper,"Oil on Paper, photo; 
-Was at Sun Valley
-acquired from Severn; size = 50x38 (#4)
-This was owned by Kevin but he transferred it to Bill in April '21",NA,50x38,Fine Art,Bill,Scottsdale,Severn,Completed,3400,1991,NA
-works/Kevin/Brad Rude--32,32,"Rude, Brad",Emergence of Form,Oil on Board,Oil on Board; acquired from Severn; size = 63x43; insured (#32),NA,63x43,Fine Art,Kevin,Scottsdale,Severn,Divide,4300,1996,2025
-works/Cathy/Suzzane Sable--62,62,"Sable, Suzzane",Good Morning Kiss,Bronze,"Bronze horses; acquired from Brennan Gallery AZ; size = 30 in; insured (#62)
-https://www.worthpoint.com/worthopedia/suzanne-sable-horses-bronze-sculpture-1753475336",NA,30 in,Fine Art,Cathy,Scottsdale,Brennan Gallery AZ,Divide,7750,2003,2025
-works/Cathy/Leslie Safarik--64,64,"Safarik, Leslie",Small Group (3 figures),Ceramic,"Ceramic, 3 ceramic ladies; acquired from Bonner Gallery; size = 24 in (#64)",3 ceramic ladies,24 in,Fine Art,Cathy,Scottsdale,Bonner Gallery,Divide,2800,2003,2025
-works/Unclaimed/David Salk--60,60,"Salk, David",Apache Tray Basket,Ceramic,NA,Includes Stand,15 in round,NA,NA,Scottsdale,Art America,NA,1000,NA,NA
-works/Cathy/David Schwarz--47,47,"Schwarz, David",Untitled,Blown Glass,"Blown Glass, Glass Sphere; acquired from Boise Art Museum; size = 13 in; insured (#47)",Glass Sphere,13 in,Fine Art,Cathy,Scottsdale,Foster/White Gallery,Divide,7800,2002,2025
-works/Cathy/Richard Sedivy--227,227,"Sedivy, Richard",Pitch Perfect,Oil,"oil and acrylic on wood; size = 23.5x28.5; from Hunsaker/Schlesinger Fine Art, Santa Monica; Peter Blake Gallery, insured (#204)","Found in insurance docs, ""oil and acrylic on wood""",23.5x28.5,Fine Art,Cathy,Scottsdale,NA,Divide,7000,NA,2025
-works/Unclaimed/Sherry--225,225,Sherry,Cows and pencil,Mixed media,NA,fun display with little cows and a pencil,11x10,NA,NA,Portland,NA,NA,NA,NA,NA
-works/Unclaimed/Snellman--104,104,Snellman,Wolf,Mixed,NA,NA,NA,NA,NA,Scottsdale,Sun Valley Center,NA,850,NA,NA
-works/Chris/Alexi Spyratos--43,43,"Spyratos, Alexi",Giraffe,Acrylic,Acrylic; acquired from Mt Kenya Art Gallery (#43),NA,NA,Fine Art,Chris,Portland,Mt Kenya Art Gallery,Completed,1500,1992,2021
-works/Cathy/Joel Stewart--72,72,"Stewart, Joel",Dragon Vase with Constellation,Watercolor,Giant framed watercolor; acquired from Artist; size = 78x26; insured (#72),NA,78x26,Fine Art,Cathy,Scottsdale,Artist,Divide,6200,2006,2025
-works/Cathy/Strobline--213,213,Strobline,Untitled,NA,"; acquired from Main Gallery, Boise, ID-59; size = 19x26 (#213)",NA,19x26,Fine Art,Cathy,Portland,"Main Gallery, Boise, ID-59",Completed,NA,NA,2021
-works/Cathy/Ray Swanson--FS148,FS148,"Swanson, Ray",Can we be friends,NA,36x40 print 05/50,NA,NA,Fine Art,Cathy,Scottsdale,NA,Divide,NA,NA,2025
-works/Kevin/Mark Tahbo--45,45,"Tahbo, Mark",Kachina Mask Bowl,Pottery,"Pottery, Hopi; acquired from King (Scottsdale); size = 7x3 1/2 (#45);",Hopi,7x3 1/2,Fine Art,Kevin,Scottsdale,King (Scottsdale),Divide,1215,1998,2025
-works/Bill/Takahara--224,224,Takahara,Plate and Bowl,Ceramic,"Ceramic, Matching Bowl and Plate (#224)",Matching Bowl and Plate,NA,Fine Art,Bill,Portland,NA,Completed,NA,NA,2021
-works/Bill/Theo Tobiasse--220,220,"Tobiasse, Theo",Man Who Walks on the Ramparts,Print,"Lithogramph, In French says ""those who walk on the jars of a thousand"" (#220).  Found print on ebay selling for $400.  Nahan Galleries.","Unable to read name, in french says ""those who walk on the jars of a thousand""",NA,Fine Art,Bill,Portland,NA,Completed,NA,1995,2021
-works/Kevin/Unknown--216,216,Unknown,Steel yard sculpture,Steel,"Steel, Very heavy steel sculpture, very weathered; size = 38-40"" tall (#216)","Very heavy steel sculpture, very weathered","38-40"" tall",Fine Art,Kevin,Portland,NA,Completed,NA,NA,2021
-works/Bill/Unknown--218,218,Unknown,Bronze horse,Bronze,"Bronze, Hollow; size = 18 high (#218)",Hollow,18 high,Fine Art,Bill,Portland,NA,Completed,NA,NA,2021
-works/Unclaimed/Victor Martinez--FS152,FS152,Victor Martinez,Mia,NA,"Commissioned Painting, 19x16",NA,NA,Fine Art,NA,Scottsdale,NA,Completed,NA,NA,NA
-works/Unclaimed/Weisse--222,222,Weisse,Cow Prints,Prints,NA,Print of cow with shadow; act now and receive this bonus print of cows grazing,NA,NA,NA,Portland,NA,NA,NA,NA,NA
-works/Unclaimed/Stephani Wilde--58,58,"Wilde, Stephani",Angels With Golden Pears,Mixed,NA,NA,NA,NA,NA,Portland,Stewart Gallery,NA,3200,NA,NA
-works/Jean/Isaac Witkin--57,57,"Witkin, Isaac",Hawthorne Tree III,Bronze,"Bronze; acquired from Witkin; size = 18 in; insured (#57)
-Could this be overvalued??",NA,18 in,Fine Art,Jean,Scottsdale,Witkin,Divide,11500,2002,2025
-works/Jean/Karen Wood--203,203,"Wood, Karen",Untitled,Acrylic,Acrylic; acquired from Childrens Museum; size = 6x6 (#203),NA,6x6,Fine Art,Jean,Portland,Childrens Museum,Completed,NA,NA,2021
-works/Unclaimed/Joeseph Woodward--63,63,"Woodward, Joeseph",Totem,Ceramic,Ceramic; acquired from Woodward; size = 5.0 ft (#63),NA,5.0 ft,Fine Art,NA,Scottsdale,Woodward,Stays,1600,2003,NA
-works/Unclaimed/Michael Zapponi--49,49,"Zapponi, Michael",Abstract School,Metal Sculpture,"Metal Sculpture, Four six ft pieces with mounting brackets and one 3 ft piece with wire for hanging.
+Star Throw is 2/15.",Gallery 601 Boise,
+,
+,Portland,2021,Chris
+Works/Unclaimed/Shelley Rapp--69,69,Shelley Rapp,
+,
+,
+,
+,
+,Indigo blue,Fiber Sculpture,
+,
+,Artist,2051,2007,Scottsdale,
+,
 
-Three of the pieces were appraised and insured, possibly $4000 for all three?  Acquired from Zapponi Commission; Part of a set; Bill has 2; size = 2.5 ftx6.0 ft; insured (#49)",Three pieces appraised and insured,2.5 ftx6.0 ft,Fine Art,NA,Scottsdale,Zapponi Commission -- 7 or 8 fish?  Bill has 2,Completed,10000,2000,NA
-works/Chris/Unknown--FS113,FS113,NA,Chinese Mural,NA,size = 55x18 framed (#211),NA,NA,Fine Art,Chris,Portland,NA,Completed,NA,NA,2021
-works/Chris/Unknown--FS115,FS115,NA,Four Fishes,NA,Print; acquired from ID-60 (#214),NA,NA,Fine Art,Chris,Portland,NA,Completed,NA,NA,2021
-works/Bill/Unknown--FS118,FS118,NA,Ceramic Jar with Cover,NA,"12"" tall, 8"" wide",NA,NA,Fine Art,Bill,Portland,NA,Completed,NA,NA,2021
-works/Unclaimed/Unknown--FS120,FS120,NA,Ceramic Vase,NA,"14"" tall",NA,NA,Fine Art,NA,Portland,NA,Completed,NA,NA,NA
-works/Bill/Unknown--FS124,FS124,NA,Glazed Metal Salamander,NA,"5"" tall, 19"" long, 14"" wide",NA,NA,Fine Art,Bill,Portland,NA,Completed,NA,NA,2021
-works/Kevin/Unknown--FS138,FS138,NA,Unidentified Print or Acrylic,NA,NA,NA,NA,Fine Art,Kevin,Portland,NA,Completed,NA,NA,2021
-works/Bill/Unknown--FS150,FS150,NA,Glazed metal vessel,NA,"50” tall by 17” wide, not attached to base.  Found a receipt from Scottsdale Art show for ""relic vessel copper"".  Purchased for $2800",NA,NA,Fine Art,Bill,Scottsdale,NA,Divide,NA,NA,2025
-works/Unclaimed/Unknown--FS162,FS162,NA,Musical Instrument,NA,"Some sort of decorator piece, non-functional",NA,NA,Chachkies,NA,Scottsdale,NA,Keep,NA,NA,NA
+Works/Cathy/Laura Regan--FS112,FS112,Laura Regan,
+,
+,
+,
+,
+,Untitled,Print or watercolor ?,39x34,
+,
+,
+,
+,Portland,2021,Cathy
+Works/Chris/Reshon--13,13,Reshon,
+,
+,
+,
+,
+,Waterfowl (Two),Watercolor,14x21,Resnon or Reshon?  One piece is in the big bedroom and the other is stored in the garage against the east wall,NJ,4000,1985,Scottsdale,2025,Chris
+Works/Bill/Mary Roland--4,4,Mary Roland,
+,
+,
+,
+,
+,Wilton Forest,"Oil on Paper, Photo",50x38,Was at Sun Valley.  This was owned by Kevin but he transferred it to Bill in April ’21.  Bill replaced the frame.,Severn,3400,1991,Scottsdale,2021,Bill
+Works/Kevin/Brad Rude--32,32,Brad Rude,1964,
+,Montana,"Sculptor and painter residing in Walla Walla, WA; creates animals surrounded by emblems of the human condition,.",https://www.bradrude.com/biography/,Emergence of Form,Oil on Board,63x43,
+,Severn,4300,1996,Scottsdale,2025,Kevin
+Works/Cathy/Suzzane Sable--62,62,Suzzane Sable,
+,
+,
+,
+,https://www.worthpoint.com/worthopedia/suzanne-sable-horses-bronze-sculpture-1753475336,Good Morning Kiss,Bronze Horses,30 in,
+,Brennan Gallery AZ,7750,2003,Scottsdale,2025,Cathy
+Works/Cathy/Leslie Safarik--64,64,Leslie Safarik,
+,
+,"Sunnyvale, CA","Ceramic sculptor influenced by time in Paris and Brazil; known for brightly colored, whimsical figures and low-fire ceramics,.",https://www.safarikstudios.com/about.html,Small Group (3 figures),Ceramic,24 in,3 ceramic ladies,Bonner Gallery,2800,2003,Scottsdale,2025,Cathy
+Works/Unclaimed/David Salk--60,60,David Salk,
+,
+,"Palm Springs, CA","Ceramicist who creates wheel-thrown clay baskets designed to emulate authentic Indian woven baskets,.",
+,Apache Tray Basket,Ceramic,15 in round,Includes Stand,Art America,1000,
+,Scottsdale,
+,
+
+Works/Cathy/David Schwarz--47,47,David Schwarz,1952,
+,"Vancouver, WA","Glass artist associated with the Pilchuck Glass School; known for blown, painted, etched, and faceted glass vessels,.",
+,Untitled,Blown Glass,13 in,Glass Sphere,Foster/White Gallery,7800,2002,Scottsdale,2025,Cathy
+Works/Cathy/Richard Sedivy--227,227,Richard Sedivy,1948,
+,"Chicago, IL","Painter known for contemporary landscapes, architectural themes, and the 'Continuum' series,.",
+,Pitch Perfect,Oil and Acrylic on /Wood,23.5x28.5,from Peter Blake Gallery,"Hunsaker/Schlesinger Fine Art, Santa Monica",7000,
+,Scottsdale,2025,Cathy
+Works/Unclaimed/Cynthia Snellman--104,104,Cynthia Snellman,
+,
+,
+,
+,
+,Wolf,Mixed,
+,
+,Sun Valley Center,850,
+,Scottsdale,
+,
+
+Works/Chris/Alexi Spyratos--43,43,Alexi Spyratos,
+,
+,
+,
+,
+,Giraffe,Acrylic,
+,
+,Mt Kenya Art Gallery,1500,1992,Portland,2021,Chris
+Works/Cathy/Joel Stewart--72,72,Joel Stewart,
+,
+,"Kyoto, Japan","Watercolor artist based in Japan, known for works such as 'Dragon Vase with Constellation'.",
+,Dragon Vase with Constellation,Watercolor,78x26,
+,Artist,6200,2006,Scottsdale,2025,Cathy
+Works/Cathy/Strobline--213,213,Strobline,
+,
+,
+,
+,
+,Untitled,
+,19x26,
+,"Main Gallery, Boise, ID-59",
+,
+,Portland,2021,Cathy
+Works/Cathy/Ray Swanson--FS148,FS148,Ray Swanson,
+,
+,
+,
+,
+,Can we be friends,
+,36x40,Edition 5 of 50,
+,
+,
+,Scottsdale,2025,Cathy
+Works/Kevin/Mark Tahbo--45,45,Mark Tahbo,1958,
+,Hopi-Tewa,"Hopi-Tewa potter and great-grandchild of Grace Chapella; known for traditional ceramics and butterfly designs,.",
+,Kachina Mask Bowl,Pottery,7x3 1/2,Hopi,King (Scottsdale),1215,1998,Scottsdale,2025,Kevin
+Works/Bill/Takahara--224,224,Takahara,
+,
+,
+,
+,
+,Plate and Bowl,Ceramic,
+,Matching Bowl and Plate,
+,
+,
+,Portland,2021,Bill
+Works/Bill/Theo Tobiasse--220,220,Theo Tobiasse,
+,2012,Israel,"Painter and carborundum etcher; themes include exile, women, and biblical stories; influenced by surrealism,.",https://www.renjeau.com/artist/tobiasse-theo/,Man Who Walks on the Ramparts,Lithograph,
+,"In French says ""those who walk on the jars of a thousand"" (#220).  Found print on ebay selling for $400.",
+,
+,1995,Portland,2021,Bill
+Works/Kevin/Unknown--216,216,Unknown,
+,
+,
+,
+,
+,Steel yard sculpture,Steel,"38-40"" tall","Very heavy steel sculpture, very weathered",
+,
+,
+,Portland,2021,Kevin
+Works/Bill/Unknown--218,218,Unknown,
+,
+,
+,
+,
+,Bronze horse,Bronze,18 high,Hollow,
+,
+,
+,Portland,2021,Bill
+Works/Unclaimed/Stephani Wilde--58,58,Stephani Wilde,
+,
+,
+,
+,
+,Angels With Golden Pears,Mixed,
+,
+,Stewart Gallery,3200,
+,Portland,
+,
+
+Works/Jean/Isaac Witkin--57,57,Isaac Witkin,1936,2006,"Johannesburg, South Africa","Abstract sculptor; apprentice to Henry Moore; known for 'New Generation' sculpture using fiberglass and poured bronze,.",https://en.wikipedia.org/wiki/Isaac_Witkin,Hawthorne Tree III,Bronze,18 in,
+,Witkin,11500,2002,Scottsdale,2025,Jean
+Works/Jean/Karen Wood--203,203,Karen Wood,
+,
+,
+,
+,
+,Untitled,Acrylic,6x6,
+,Childrens Museum,
+,
+,Portland,2021,Jean
+Works/Unclaimed/Joeseph Woodward--63,63,Joeseph Woodward,
+,
+,
+,
+,
+,Totem,Ceramic,5.0 ft,
+,Woodward,1600,2003,Scottsdale,
+,
+
+Works/Bill/Michael Zapponi--49,49,Michael Zapponi,
+,
+,
+,
+,
+,Abstract School,Metal Sculpture,2.5 ftx6.0 ft,"Metal Sculpture, Four six ft pieces with mounting brackets and one 3 ft piece with wire for hanging.  Divided among Kevin and Bill.
+
+Acquired from Zapponi Commission",Zapponi Commission -- 7 or 8 fish?  Bill has 2,10000,2000,Scottsdale,2021,Bill
+Works/Bill/Unknown--FS150,FS150,
+,
+,
+,
+,
+,
+,Glazed metal vessel,
+,50” x 17” wide,"Found a receipt from Scottsdale Art show for ""relic vessel copper"".  Purchased for $2800",
+,
+,
+,Scottsdale,2025,Bill
+Works/Chris/Unknown--FS113,FS113,
+,
+,
+,
+,
+,
+,Chinese Mural,
+,55x18,
+,
+,
+,
+,Portland,2021,Chris
+Works/Chris/Unknown--FS115,FS115,
+,
+,
+,
+,
+,
+,Four Fishes,Print,
+,
+,
+,
+,
+,Portland,2021,Chris
+Works/Bill/Unknown--FS118,FS118,
+,
+,
+,
+,
+,
+,Ceramic Jar with Cover,Ceramic,12 x 8 x 8,
+,
+,
+,
+,Portland,2021,Bill
+Works/Unclaimed/Unknown--FS120,FS120,
+,
+,
+,
+,
+,
+,Ceramic Vase,Ceramic,14”,
+,
+,
+,
+,Portland,
+,
+
+Works/Bill/Unknown--FS124,FS124,
+,
+,
+,
+,
+,
+,Glazed Metal Salamander,Glazed Metal,19x14x5,
+,
+,
+,
+,Portland,2021,Bill
+Works/Kevin/Unknown--FS138,FS138,
+,
+,
+,
+,
+,
+,Unidentified Print or Acrylic,
+,
+,
+,
+,
+,
+,Portland,2021,Kevin
