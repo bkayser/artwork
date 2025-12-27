@@ -4,20 +4,33 @@
 <meta charset="utf-8"/>
 <style>body{background-color:white;}</style>
 
-  <title>Indigo blue - Rapp, Shelley</title>
+  <title>Indigo blue</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      </script>
 </head>
 <html>
   <body>
     <div class="container">
-      <header>
-        <h1>Indigo blue</h1>
-        <h2>Rapp, Shelley</h2>
-      </header>
+      <h1>Indigo blue</h1>
       <div class="content-grid">
-        <div class="data-section">
+        <div class="info-section">
           <table class="info-table">
             <tbody>
               <tr>
@@ -26,35 +39,15 @@
               </tr>
               <tr>
                 <th>Artist</th>
-                <td>Rapp, Shelley</td>
-              </tr>
-              <tr>
-                <th>Title</th>
-                <td>Indigo blue</td>
+                <td>Shelley Rapp</td>
               </tr>
               <tr>
                 <th>Medium</th>
                 <td>Fiber Sculpture</td>
               </tr>
               <tr>
-                <th>Description</th>
-                <td>Fiber Sculpture; acquired from Artist (#69)</td>
-              </tr>
-              <tr>
-                <th>Category</th>
-                <td>Fine Art</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>Scottsdale</td>
-              </tr>
-              <tr>
                 <th>Gallery</th>
                 <td>Artist</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>Stays</td>
               </tr>
               <tr>
                 <th>Value</th>
@@ -64,24 +57,30 @@
                 <th>Acquired</th>
                 <td>2007</td>
               </tr>
+              <tr>
+                <th>Location</th>
+                <td>Scottsdale</td>
+              </tr>
             </tbody>
           </table>
+          <div class="pdf-section">
+            <h4>Documents</h4>
+            <div class="pdf-link">
+              <span class="pdf-icon">📄</span>
+              <a href="Documents.pdf" target="_blank">Documents.pdf</a>
+            </div>
+          </div>
         </div>
-        <div class="files-section">
-          <h3 class="section-title">Documents</h3>
-          <a class="file-link" href="Documents.pdf" target="_blank">
-            <span class="icon">PDF</span>
-            Documents.pdf
-          </a>
+        <div class="gallery-section">
+          <div class="gallery">
+            <img src="5baf6257254e47bc15de8afff4f7d22d.jpe" class="gallery-img" onclick="openLightbox(&#39;5baf6257254e47bc15de8afff4f7d22d.jpe&#39;)" alt="Artwork Image"/>
+            <img src="69--Indigo blue - 00.jpg" class="gallery-img" onclick="openLightbox(&#39;69--Indigo blue - 00.jpg&#39;)" alt="Artwork Image"/>
+          </div>
         </div>
       </div>
-      <div class="gallery">
-        <div class="img-wrapper">
-          <img src="5baf6257254e47bc15de8afff4f7d22d.jpe" alt="Image of Indigo blue"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="69--Indigo blue - 00.jpg" alt="Image of Indigo blue"/>
-        </div>
+      <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img"/>
       </div>
     </div>
   </body>

@@ -4,20 +4,33 @@
 <meta charset="utf-8"/>
 <style>body{background-color:white;}</style>
 
-  <title>Untitled - Strobline</title>
+  <title>Untitled</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      </script>
 </head>
 <html>
   <body>
     <div class="container">
-      <header>
-        <h1>Untitled</h1>
-        <h2>Strobline</h2>
-      </header>
+      <h1>Untitled</h1>
       <div class="content-grid">
-        <div class="data-section">
+        <div class="info-section">
           <table class="info-table">
             <tbody>
               <tr>
@@ -29,58 +42,37 @@
                 <td>Strobline</td>
               </tr>
               <tr>
-                <th>Title</th>
-                <td>Untitled</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td>; acquired from Main Gallery, Boise, ID-59; size = 19x26 (#213)</td>
-              </tr>
-              <tr>
                 <th>Size</th>
                 <td>19x26</td>
-              </tr>
-              <tr>
-                <th>Category</th>
-                <td>Fine Art</td>
-              </tr>
-              <tr>
-                <th>Owner</th>
-                <td>Cathy</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>Portland</td>
               </tr>
               <tr>
                 <th>Gallery</th>
                 <td>Main Gallery, Boise, ID-59</td>
               </tr>
               <tr>
-                <th>Status</th>
-                <td>Completed</td>
+                <th>Location</th>
+                <td>Portland</td>
               </tr>
               <tr>
                 <th>Distributed</th>
                 <td>2021</td>
               </tr>
+              <tr>
+                <th>Owner</th>
+                <td>Cathy</td>
+              </tr>
             </tbody>
           </table>
         </div>
+        <div class="gallery-section">
+          <div class="gallery">
+            <img src="e7263fc8251ff5917466afcebad07ac6.jpe" class="gallery-img" onclick="openLightbox(&#39;e7263fc8251ff5917466afcebad07ac6.jpe&#39;)" alt="Artwork Image"/>
+          </div>
+        </div>
       </div>
-      <div class="gallery">
-        <div class="img-wrapper">
-          <img src="213--Untitled - 00.jpg" alt="Image of Untitled"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="213--Untitled - 01.jpg" alt="Image of Untitled"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="213--Untitled - 02.jpg" alt="Image of Untitled"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="e7263fc8251ff5917466afcebad07ac6.jpe" alt="Image of Untitled"/>
-        </div>
+      <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img"/>
       </div>
     </div>
   </body>

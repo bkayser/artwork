@@ -4,20 +4,33 @@
 <meta charset="utf-8"/>
 <style>body{background-color:white;}</style>
 
-  <title>Body - Dine, Jim</title>
+  <title>Body</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      </script>
 </head>
 <html>
   <body>
     <div class="container">
-      <header>
-        <h1>Body</h1>
-        <h2>Dine, Jim</h2>
-      </header>
+      <h1>Body</h1>
       <div class="content-grid">
-        <div class="data-section">
+        <div class="info-section">
           <table class="info-table">
             <tbody>
               <tr>
@@ -26,62 +39,68 @@
               </tr>
               <tr>
                 <th>Artist</th>
-                <td>Dine, Jim</td>
+                <td>Jim Dine</td>
               </tr>
               <tr>
-                <th>Title</th>
-                <td>Body</td>
+                <th>Born</th>
+                <td>1935</td>
+              </tr>
+              <tr>
+                <th>Hometown</th>
+                <td>Cincinnati, OH</td>
+              </tr>
+              <tr>
+                <th>Bio</th>
+                <td>Pop Art and Neo-Dada artist known for 'Happenings' and the use of everyday objects (robes, tools) in painting, printmaking, and sculpture,,.</td>
+              </tr>
+              <tr>
+                <th>Links</th>
+                <td>
+                  <div>
+                    <a href="https://www.richardgraygallery.com/artists/jim-dine" target="_blank">www.richardgraygallery.com</a>
+                  </div>
+                  <div>
+                    <a href="https://en.wikipedia.org/wiki/Jim_Dine" target="_blank">en.wikipedia.org</a>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <th>Medium</th>
                 <td>Print</td>
               </tr>
               <tr>
-                <th>Description</th>
-                <td>Print, "BD" written on sticker.  2/30; acquired from Gallery 601 Boise (#215)</td>
-              </tr>
-              <tr>
                 <th>Details</th>
                 <td>"BD" written on sticker.  2/30</td>
-              </tr>
-              <tr>
-                <th>Category</th>
-                <td>Fine Art</td>
-              </tr>
-              <tr>
-                <th>Owner</th>
-                <td>Jean</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>Portland</td>
               </tr>
               <tr>
                 <th>Gallery</th>
                 <td>Gallery 601 Boise</td>
               </tr>
               <tr>
-                <th>Status</th>
-                <td>Completed</td>
+                <th>Location</th>
+                <td>Portland</td>
               </tr>
               <tr>
                 <th>Distributed</th>
                 <td>2021</td>
               </tr>
+              <tr>
+                <th>Owner</th>
+                <td>Jean</td>
+              </tr>
             </tbody>
           </table>
         </div>
+        <div class="gallery-section">
+          <div class="gallery">
+            <img src="215--Body - 00.jpg" class="gallery-img" onclick="openLightbox(&#39;215--Body - 00.jpg&#39;)" alt="Artwork Image"/>
+            <img src="215--Body - 01.jpg" class="gallery-img" onclick="openLightbox(&#39;215--Body - 01.jpg&#39;)" alt="Artwork Image"/>
+          </div>
+        </div>
       </div>
-      <div class="gallery">
-        <div class="img-wrapper">
-          <img src="215--Body - 00.jpg" alt="Image of Body"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="215--Body - 01.jpg" alt="Image of Body"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="80820fbd2361c3963919675d144e7cb8.jpe" alt="Image of Body"/>
-        </div>
+      <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img"/>
       </div>
     </div>
   </body>

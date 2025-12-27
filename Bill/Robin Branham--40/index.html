@@ -4,20 +4,33 @@
 <meta charset="utf-8"/>
 <style>body{background-color:white;}</style>
 
-  <title>The Stick - Branham, Robin</title>
+  <title>The Stick</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      </script>
 </head>
 <html>
   <body>
     <div class="container">
-      <header>
-        <h1>The Stick</h1>
-        <h2>Branham, Robin</h2>
-      </header>
+      <h1>The Stick</h1>
       <div class="content-grid">
-        <div class="data-section">
+        <div class="info-section">
           <table class="info-table">
             <tbody>
               <tr>
@@ -26,43 +39,39 @@
               </tr>
               <tr>
                 <th>Artist</th>
-                <td>Branham, Robin</td>
+                <td>Robin Branham</td>
               </tr>
               <tr>
-                <th>Title</th>
-                <td>The Stick</td>
+                <th>Hometown</th>
+                <td>Malibu, CA</td>
+              </tr>
+              <tr>
+                <th>Bio</th>
+                <td>Painter working with acrylics and polymers on large-scale surfaces; known for a process of 'planned abandon' focusing on surface and texture,.</td>
+              </tr>
+              <tr>
+                <th>Links</th>
+                <td>
+                  <div>
+                    <a href="https://www.robinbranham.com/bio" target="_blank">www.robinbranham.com</a>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <th>Medium</th>
                 <td>Oil on Steel</td>
               </tr>
               <tr>
-                <th>Description</th>
-                <td>Oil on Steel,  5ft long; acquired from Celebration of Fine Art</td>
-              </tr>
-              <tr>
                 <th>Size</th>
                 <td>5 ft</td>
               </tr>
               <tr>
-                <th>Category</th>
-                <td>Fine Art</td>
-              </tr>
-              <tr>
-                <th>Owner</th>
-                <td>Bill</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>Scottsdale</td>
+                <th>Details</th>
+                <td>Misidentified earlier as double blue wave by Jensen</td>
               </tr>
               <tr>
                 <th>Gallery</th>
-                <td>Friesen</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>Divide</td>
+                <td>Celebration of Fine Art</td>
               </tr>
               <tr>
                 <th>Value</th>
@@ -73,17 +82,36 @@
                 <td>2010</td>
               </tr>
               <tr>
+                <th>Location</th>
+                <td>Scottsdale</td>
+              </tr>
+              <tr>
                 <th>Distributed</th>
                 <td>2025</td>
               </tr>
+              <tr>
+                <th>Owner</th>
+                <td>Bill</td>
+              </tr>
             </tbody>
           </table>
+          <div class="pdf-section">
+            <h4>Documents</h4>
+            <div class="pdf-link">
+              <span class="pdf-icon">📄</span>
+              <a href="Receipt_20100314.pdf" target="_blank">Receipt_20100314.pdf</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-section">
+          <div class="gallery">
+            <img src="11917fc7293fc71b78253e3ac3d71352.jpe" class="gallery-img" onclick="openLightbox(&#39;11917fc7293fc71b78253e3ac3d71352.jpe&#39;)" alt="Artwork Image"/>
+          </div>
         </div>
       </div>
-      <div class="gallery">
-        <div class="img-wrapper">
-          <img src="11917fc7293fc71b78253e3ac3d71352.jpe" alt="Image of The Stick"/>
-        </div>
+      <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img"/>
       </div>
     </div>
   </body>

@@ -4,20 +4,33 @@
 <meta charset="utf-8"/>
 <style>body{background-color:white;}</style>
 
-  <title>Pieces (Pair) - Merrill, Andea</title>
+  <title>Pieces (Pair)</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      </script>
 </head>
 <html>
   <body>
     <div class="container">
-      <header>
-        <h1>Pieces (Pair)</h1>
-        <h2>Merrill, Andea</h2>
-      </header>
+      <h1>Pieces (Pair)</h1>
       <div class="content-grid">
-        <div class="data-section">
+        <div class="info-section">
           <table class="info-table">
             <tbody>
               <tr>
@@ -26,43 +39,19 @@
               </tr>
               <tr>
                 <th>Artist</th>
-                <td>Merrill, Andea</td>
-              </tr>
-              <tr>
-                <th>Title</th>
-                <td>Pieces (Pair)</td>
+                <td>Andea Merrill</td>
               </tr>
               <tr>
                 <th>Medium</th>
                 <td>Mixed Media</td>
               </tr>
               <tr>
-                <th>Description</th>
-                <td>Mixed Media, Mixed; acquired from Stewart (#44)</td>
-              </tr>
-              <tr>
                 <th>Details</th>
                 <td>Mixed</td>
               </tr>
               <tr>
-                <th>Category</th>
-                <td>Fine Art</td>
-              </tr>
-              <tr>
-                <th>Owner</th>
-                <td>Bill</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>Portland</td>
-              </tr>
-              <tr>
                 <th>Gallery</th>
                 <td>Stewart</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>Completed</td>
               </tr>
               <tr>
                 <th>Value</th>
@@ -73,32 +62,32 @@
                 <td>1993</td>
               </tr>
               <tr>
+                <th>Location</th>
+                <td>Portland</td>
+              </tr>
+              <tr>
                 <th>Distributed</th>
                 <td>2021</td>
+              </tr>
+              <tr>
+                <th>Owner</th>
+                <td>Bill</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <div class="gallery-section">
+          <div class="gallery">
+            <img src="44--Pieces Pair - 02.jpg" class="gallery-img" onclick="openLightbox(&#39;44--Pieces Pair - 02.jpg&#39;)" alt="Artwork Image"/>
+            <img src="44--Pieces Pair - 03.jpg" class="gallery-img" onclick="openLightbox(&#39;44--Pieces Pair - 03.jpg&#39;)" alt="Artwork Image"/>
+            <img src="44--Pieces Pair - 04.jpg" class="gallery-img" onclick="openLightbox(&#39;44--Pieces Pair - 04.jpg&#39;)" alt="Artwork Image"/>
+            <img src="6bb71de85f8d36539dcbc0c7189d981f.jpe" class="gallery-img" onclick="openLightbox(&#39;6bb71de85f8d36539dcbc0c7189d981f.jpe&#39;)" alt="Artwork Image"/>
+          </div>
+        </div>
       </div>
-      <div class="gallery">
-        <div class="img-wrapper">
-          <img src="44--Pieces Pair - 00.jpg" alt="Image of Pieces (Pair)"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="44--Pieces Pair - 01.jpg" alt="Image of Pieces (Pair)"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="44--Pieces Pair - 02.jpg" alt="Image of Pieces (Pair)"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="44--Pieces Pair - 03.jpg" alt="Image of Pieces (Pair)"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="44--Pieces Pair - 04.jpg" alt="Image of Pieces (Pair)"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="6bb71de85f8d36539dcbc0c7189d981f.jpe" alt="Image of Pieces (Pair)"/>
-        </div>
+      <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img"/>
       </div>
     </div>
   </body>

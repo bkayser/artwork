@@ -4,20 +4,33 @@
 <meta charset="utf-8"/>
 <style>body{background-color:white;}</style>
 
-  <title>Dawn - Fellini, Melinda</title>
+  <title>Dawn</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      </script>
 </head>
 <html>
   <body>
     <div class="container">
-      <header>
-        <h1>Dawn</h1>
-        <h2>Fellini, Melinda</h2>
-      </header>
+      <h1>Dawn</h1>
       <div class="content-grid">
-        <div class="data-section">
+        <div class="info-section">
           <table class="info-table">
             <tbody>
               <tr>
@@ -26,43 +39,31 @@
               </tr>
               <tr>
                 <th>Artist</th>
-                <td>Fellini, Melinda</td>
+                <td>Melinda Fellini</td>
               </tr>
               <tr>
-                <th>Title</th>
-                <td>Dawn</td>
+                <th>Bio</th>
+                <td>Oil and encaustic painter creating 'visual poetry' and landscapes luminous and organic in nature,.</td>
+              </tr>
+              <tr>
+                <th>Links</th>
+                <td>
+                  <div>
+                    <a href="https://art.xanadugallery.com/collections/melinda-fellini?srsltid=AfmBOoqs-Xh2emHIcMpi_rblOB9zloY3aEjNRvpMpxDMvWfn4ycbfXMF" target="_blank">art.xanadugallery.com</a>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <th>Medium</th>
                 <td>Oil on Board</td>
               </tr>
               <tr>
-                <th>Description</th>
-                <td>Oil on Board; acquired from Xanadu  Gallery; size = 30 inx24 in (#66)</td>
-              </tr>
-              <tr>
                 <th>Size</th>
                 <td>30 inx24 in</td>
               </tr>
               <tr>
-                <th>Category</th>
-                <td>Fine Art</td>
-              </tr>
-              <tr>
-                <th>Owner</th>
-                <td>Cathy</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>Portland</td>
-              </tr>
-              <tr>
                 <th>Gallery</th>
                 <td>Xanadu  Gallery</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>Completed</td>
               </tr>
               <tr>
                 <th>Value</th>
@@ -73,34 +74,40 @@
                 <td>2005</td>
               </tr>
               <tr>
+                <th>Location</th>
+                <td>Portland</td>
+              </tr>
+              <tr>
                 <th>Distributed</th>
                 <td>2021</td>
               </tr>
+              <tr>
+                <th>Owner</th>
+                <td>Cathy</td>
+              </tr>
             </tbody>
           </table>
+          <div class="pdf-section">
+            <h4>Documents</h4>
+            <div class="pdf-link">
+              <span class="pdf-icon">📄</span>
+              <a href="Gallery_20251222.pdf" target="_blank">Gallery_20251222.pdf</a>
+            </div>
+            <div class="pdf-link">
+              <span class="pdf-icon">📄</span>
+              <a href="Invoice_20040714.pdf" target="_blank">Invoice_20040714.pdf</a>
+            </div>
+          </div>
         </div>
-        <div class="files-section">
-          <h3 class="section-title">Documents</h3>
-          <a class="file-link" href="Gallery_20251222.pdf" target="_blank">
-            <span class="icon">PDF</span>
-            Gallery_20251222.pdf
-          </a>
-          <a class="file-link" href="Invoice_20040714.pdf" target="_blank">
-            <span class="icon">PDF</span>
-            Invoice_20040714.pdf
-          </a>
+        <div class="gallery-section">
+          <div class="gallery">
+            <img src="66--Dawn - 01.jpg" class="gallery-img" onclick="openLightbox(&#39;66--Dawn - 01.jpg&#39;)" alt="Artwork Image"/>
+          </div>
         </div>
       </div>
-      <div class="gallery">
-        <div class="img-wrapper">
-          <img src="66--Dawn - 00.jpg" alt="Image of Dawn"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="66--Dawn - 01.jpg" alt="Image of Dawn"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="8d9609c4079dfe2d2fab80eee454b649.jpe" alt="Image of Dawn"/>
-        </div>
+      <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img"/>
       </div>
     </div>
   </body>
