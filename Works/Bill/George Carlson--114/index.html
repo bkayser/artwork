@@ -4,20 +4,33 @@
 <meta charset="utf-8"/>
 <style>body{background-color:white;}</style>
 
-  <title>Ballerina - Carlson, George</title>
+  <title>Still Point</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      </script>
 </head>
 <html>
   <body>
     <div class="container">
-      <header>
-        <h1>Ballerina</h1>
-        <h2>Carlson, George</h2>
-      </header>
+      <h1>Still Point</h1>
       <div class="content-grid">
-        <div class="data-section">
+        <div class="info-section">
           <table class="info-table">
             <tbody>
               <tr>
@@ -26,43 +39,43 @@
               </tr>
               <tr>
                 <th>Artist</th>
-                <td>Carlson, George</td>
+                <td>George Carlson</td>
               </tr>
               <tr>
-                <th>Title</th>
-                <td>Ballerina</td>
+                <th>Born</th>
+                <td>1940</td>
+              </tr>
+              <tr>
+                <th>Hometown</th>
+                <td>Elmhurst, IL</td>
+              </tr>
+              <tr>
+                <th>Bio</th>
+                <td>Sculptor and painter educated at the Art Institute of Chicago; known for bronzes, pastels, and Western themes, particularly those depicting the Tarahumara people,,.</td>
+              </tr>
+              <tr>
+                <th>Links</th>
+                <td>
+                  <div>
+                    <a href="https://www.georgecarlsonart.com/" target="_blank">www.georgecarlsonart.com</a>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <th>Medium</th>
                 <td>Bronze</td>
               </tr>
               <tr>
-                <th>Description</th>
-                <td>Bronze; acquired from Artist Studio; size = 25 in (#114)</td>
-              </tr>
-              <tr>
                 <th>Size</th>
                 <td>25 in</td>
               </tr>
               <tr>
-                <th>Category</th>
-                <td>Fine Art</td>
-              </tr>
-              <tr>
-                <th>Owner</th>
-                <td>Bill</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>Portland</td>
+                <th>Details</th>
+                <td>Edition 12 of 21.  On bottom is “5293” and “Teresa”</td>
               </tr>
               <tr>
                 <th>Gallery</th>
                 <td>Artist Studio</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>Completed</td>
               </tr>
               <tr>
                 <th>Value</th>
@@ -73,37 +86,41 @@
                 <td>2005</td>
               </tr>
               <tr>
+                <th>Location</th>
+                <td>Portland</td>
+              </tr>
+              <tr>
                 <th>Distributed</th>
                 <td>2021</td>
               </tr>
+              <tr>
+                <th>Owner</th>
+                <td>Bill</td>
+              </tr>
             </tbody>
           </table>
+          <div class="pdf-section">
+            <h4>Documents</h4>
+            <div class="pdf-link">
+              <span class="pdf-icon">📄</span>
+              <a href="Artist Bio and Shows.pdf" target="_blank">Artist Bio and Shows.pdf</a>
+            </div>
+            <div class="pdf-link">
+              <span class="pdf-icon">📄</span>
+              <a href="Gallery.pdf" target="_blank">Gallery.pdf</a>
+            </div>
+          </div>
         </div>
-        <div class="files-section">
-          <h3 class="section-title">Documents</h3>
-          <a class="file-link" href="Artist Bio and Shows.pdf" target="_blank">
-            <span class="icon">PDF</span>
-            Artist Bio and Shows.pdf
-          </a>
-          <a class="file-link" href="Gallery.pdf" target="_blank">
-            <span class="icon">PDF</span>
-            Gallery.pdf
-          </a>
+        <div class="gallery-section">
+          <div class="gallery">
+            <img src="114--Ballerina - 01.jpg" class="gallery-img" onclick="openLightbox(&#39;114--Ballerina - 01.jpg&#39;)" alt="Artwork Image"/>
+            <img src="theowingsgallery-george-carlson-still-point-d.-1991.jpg" class="gallery-img" onclick="openLightbox(&#39;theowingsgallery-george-carlson-still-point-d.-1991.jpg&#39;)" alt="Artwork Image"/>
+          </div>
         </div>
       </div>
-      <div class="gallery">
-        <div class="img-wrapper">
-          <img src="114--Ballerina - 00.jpg" alt="Image of Ballerina"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="114--Ballerina - 01.jpg" alt="Image of Ballerina"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="114--Ballerina - 02.jpg" alt="Image of Ballerina"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="79231159944ded13ce29989ef1fdccf0.jpe" alt="Image of Ballerina"/>
-        </div>
+      <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img"/>
       </div>
     </div>
   </body>

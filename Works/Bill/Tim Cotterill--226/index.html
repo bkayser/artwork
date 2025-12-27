@@ -4,20 +4,33 @@
 <meta charset="utf-8"/>
 <style>body{background-color:white;}</style>
 
-  <title>Ziggy - Cotterill, Tim</title>
+  <title>Ziggy</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      </script>
 </head>
 <html>
   <body>
     <div class="container">
-      <header>
-        <h1>Ziggy</h1>
-        <h2>Cotterill, Tim</h2>
-      </header>
+      <h1>Ziggy</h1>
       <div class="content-grid">
-        <div class="data-section">
+        <div class="info-section">
           <table class="info-table">
             <tbody>
               <tr>
@@ -26,56 +39,62 @@
               </tr>
               <tr>
                 <th>Artist</th>
-                <td>Cotterill, Tim</td>
+                <td>Tim Cotterill</td>
               </tr>
               <tr>
-                <th>Title</th>
-                <td>Ziggy</td>
+                <th>Hometown</th>
+                <td>United Kingdom</td>
+              </tr>
+              <tr>
+                <th>Bio</th>
+                <td>Known as 'The Frogman,' a British master artist who creates bronze sculptures of frogs using the lost wax method,.</td>
               </tr>
               <tr>
                 <th>Medium</th>
                 <td>Bronze Cast</td>
               </tr>
               <tr>
-                <th>Details</th>
-                <td>Colored Gekko, edition 148 of 1000, original price $1100-$1300</td>
-              </tr>
-              <tr>
                 <th>Size</th>
                 <td>8"</td>
               </tr>
               <tr>
-                <th>Owner</th>
-                <td>Bill</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>Scottsdale</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>Divide</td>
+                <th>Details</th>
+                <td>Colored Gekko, edition 148 of 1000, original price $1100-$1300</td>
               </tr>
               <tr>
                 <th>Value</th>
                 <td>250</td>
               </tr>
               <tr>
+                <th>Location</th>
+                <td>Scottsdale</td>
+              </tr>
+              <tr>
                 <th>Distributed</th>
                 <td>2025</td>
               </tr>
+              <tr>
+                <th>Owner</th>
+                <td>Bill</td>
+              </tr>
             </tbody>
           </table>
+          <div class="pdf-section">
+            <h4>Documents</h4>
+            <div class="pdf-link">
+              <span class="pdf-icon">📄</span>
+              <a href="Ziggy.pdf" target="_blank">Ziggy.pdf</a>
+            </div>
+          </div>
         </div>
-        <div class="files-section">
-          <h3 class="section-title">Documents</h3>
-          <a class="file-link" href="Ziggy.pdf" target="_blank">
-            <span class="icon">PDF</span>
-            Ziggy.pdf
-          </a>
+        <div class="gallery-section">
+          <p style="color: #999; font-style: italic;">No images available.</p>
         </div>
       </div>
-      <div class="footer">No images available.</div>
+      <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img"/>
+      </div>
     </div>
   </body>
 </html>

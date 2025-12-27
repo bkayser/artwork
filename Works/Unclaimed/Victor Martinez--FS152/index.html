@@ -4,20 +4,33 @@
 <meta charset="utf-8"/>
 <style>body{background-color:white;}</style>
 
-  <title>Mia - Victor Martinez</title>
+  <title>Mia</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      </script>
 </head>
 <html>
   <body>
     <div class="container">
-      <header>
-        <h1>Mia</h1>
-        <h2>Victor Martinez</h2>
-      </header>
+      <h1>Mia</h1>
       <div class="content-grid">
-        <div class="data-section">
+        <div class="info-section">
           <table class="info-table">
             <tbody>
               <tr>
@@ -29,33 +42,45 @@
                 <td>Victor Martinez</td>
               </tr>
               <tr>
-                <th>Title</th>
-                <td>Mia</td>
+                <th>Hometown</th>
+                <td>Arequipa, Peru</td>
               </tr>
               <tr>
-                <th>Description</th>
-                <td>Commissioned Painting, 19x16</td>
+                <th>Bio</th>
+                <td>Watercolor and oil painter recognized for capturing the life of Native people in Peru.</td>
               </tr>
               <tr>
-                <th>Category</th>
-                <td>Fine Art</td>
+                <th>Links</th>
+                <td>
+                  <div>
+                    <a href="http://victormartinez.com/#about" target="_blank">victormartinez.com</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Medium</th>
+                <td>Watercolor</td>
+              </tr>
+              <tr>
+                <th>Details</th>
+                <td>Commissioned Painting</td>
               </tr>
               <tr>
                 <th>Location</th>
                 <td>Scottsdale</td>
               </tr>
-              <tr>
-                <th>Status</th>
-                <td>Completed</td>
-              </tr>
             </tbody>
           </table>
         </div>
-      </div>
-      <div class="gallery">
-        <div class="img-wrapper">
-          <img src="553cc7eb14fa0ad451f1e5584c28e0bf.jpe" alt="Image of Mia"/>
+        <div class="gallery-section">
+          <div class="gallery">
+            <img src="553cc7eb14fa0ad451f1e5584c28e0bf.jpe" class="gallery-img" onclick="openLightbox(&#39;553cc7eb14fa0ad451f1e5584c28e0bf.jpe&#39;)" alt="Artwork Image"/>
+          </div>
         </div>
+      </div>
+      <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img"/>
       </div>
     </div>
   </body>
