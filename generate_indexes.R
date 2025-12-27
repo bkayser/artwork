@@ -1,22 +1,26 @@
-library(readr)
-library(dplyr)
-library(stringr)
-library(fs)
-library(htmltools) # Using htmltools for safer/cleaner HTML generation
 
 # PROMPT
-# Write code that will use the attached table to create an index.html file in every directory listed as a value in target_dir.
+# Write a function that will use the attached table to create an index.html file in every directory listed as a value in target_dir.
 # In each of these directories there may exist image files that end in "jpe" "jpg" or "jpeg".  There may also exist supplementary PDF files.
 # The index file for each row should be laid out according to these rules:
 # 1. Each column except 'target_dir' that has a non-empty value should appear as an attribute in a vertical table.
+# 1a. Instead of putting "Title" in the table, use that value as the title for the page.
 # 2. The table will have a column with the attribute name and a column with the attribute value.
 # 3. For the Links attribute, put a hyperlink in the value column for each link listed.  The name of the link should be the hostname part of the URL, and the href should be the link.
 # 4. Next to the table should be a Link to each PDF file found in the directory.
 # 5. The images in the directory should be displayed in the HTML file with a maximum size of 600 pixels wide, each.
 # 6. If an image is clicked it should open a popup window with the image in full size.
+# 7. The title of each page should be taken from the "Title" column.
 # 
 # The html file should be laid out neatly with CSS classes assigned to elements.  In addition to the R code, generate a CSS file to put in the works directory which will give a clean minimalist but pleasing aesthetic to all the index files, each of which will reference the CSS file from the "works" directory.
 # Make the view responsive so it looks okay in mobile apps.
+
+library(readr)
+library(dplyr)
+library(stringr)
+library(fs)
+library(htmltools)
+library(urltools)
 
 # --- Configuration ---
 csv_file <- "deploy_info.csv"
@@ -28,133 +32,194 @@ if (!file.exists(csv_file)) stop("deploy_info.csv not found!")
 deploy_data <- read_csv(csv_file, show_col_types = FALSE)
 
 # --- 2. Create CSS File ---
-# Ensure works directory exists
-if (!dir.exists(works_root)) dir.create(works_root)
+if (!dir.exists(works_root)) dir.create(works_root, recursive = TRUE)
 
 css_content <- "
+/* Clean Minimalist Aesthetic */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --bg-color: #fcfcfc;
+    --text-color: #333;
+    --border-color: #e0e0e0;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: #f4f4f9;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 20px;
 }
+
 .container {
+    max-width: 1200px;
+    margin: 0 auto;
     background: white;
-    padding: 3rem;
+    padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
-header {
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 1rem;
-}
+
 h1 {
-    color: #111;
-    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
     font-size: 2rem;
 }
-h2 {
-    color: #666;
-    font-weight: 400;
-    margin: 0;
-    font-size: 1.25rem;
-}
+
+/* Layout Grid */
 .content-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 2rem;
 }
-.data-section {
-    flex: 2;
-    min-width: 300px;
+
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
 }
-.files-section {
-    flex: 1;
-    min-width: 200px;
-    background: #fafafa;
-    padding: 1.5rem;
-    border-radius: 6px;
-    height: fit-content;
-}
+
 /* Table Styling */
 table.info-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.95rem;
 }
-table.info-table th, table.info-table td {
-    padding: 10px 15px;
-    border-bottom: 1px solid #eee;
-    text-align: left;
-    vertical-align: top;
-}
+
 table.info-table th {
-    color: #555;
+    text-align: left;
+    padding: 12px;
+    background-color: #f8f9fa;
+    color: var(--secondary-color);
+    width: 30%;
+    border-bottom: 1px solid var(--border-color);
     font-weight: 600;
-    width: 120px;
-    background-color: #fcfcfc;
 }
-table.info-table tr:last-child td, table.info-table tr:last-child th {
-    border-bottom: none;
+
+table.info-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
 }
-/* Links & Files */
-h3.section-title {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #888;
+
+/* Links */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* PDF Section */
+.pdf-section {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.pdf-section h4 {
     margin-top: 0;
+    color: var(--secondary-color);
+    font-size: 1rem;
+    margin-bottom: 10px;
 }
-a.file-link {
+
+.pdf-link {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
     display: flex;
     align-items: center;
-    padding: 8px 12px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    text-decoration: none;
-    color: #333;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-    transition: all 0.2s;
 }
-a.file-link:hover {
-    border-color: #bbb;
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+.pdf-icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
 }
-a.file-link span.icon { margin-right: 8px; color: #e74c3c; font-weight: bold;}
-/* Images */
-.gallery {
+
+/* Image Gallery */
+.gallery-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    border-top: 1px solid #eee;
-    padding-top: 2rem;
 }
-.img-wrapper {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 4px;
-    overflow: hidden;
-    line-height: 0;
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
 }
-.gallery img {
+
+.gallery-img {
     max-width: 600px;
     width: 100%;
     height: auto;
-    display: block;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+    object-fit: contain;
 }
-.footer {
-    margin-top: 3rem;
+
+.gallery-img:hover {
+    transform: scale(1.02);
+}
+
+/* Popup/Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.lightbox-img {
+    max-width: 95%;
+    max-height: 95vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border-radius: 4px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1001;
+    background: rgba(0,0,0,0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     text-align: center;
-    font-size: 0.8rem;
-    color: #aaa;
+    line-height: 50px;
+}
+
+.close-btn:hover {
+    background: rgba(255,255,255,0.2);
 }
 "
 
@@ -162,120 +227,158 @@ write_lines(css_content, file.path(works_root, css_filename))
 message("CSS file created at: ", file.path(works_root, css_filename))
 
 
-# --- 3. Generate HTML for Each Directory ---
+# --- 3. Helper Functions ---
+
+# Function to parse and generate links for the Links column
+format_links <- function(links_str) {
+    if (is.na(links_str) || links_str == "") return("")
+    
+    # Split by space
+    urls <- str_split(links_str, "\\s+")[[1]]
+    
+    link_tags <- lapply(urls, function(url) {
+        if (url == "") return(NULL)
+        # Extract hostname for display
+        host <- url_parse(url)$domain
+        if (is.na(host)) host <- "Link"
+        
+        div(a(href = url, target = "_blank", host))
+    })
+    
+    do.call(tagList, link_tags)
+}
+
+# --- 4. Process Each Row ---
 
 for (i in 1:nrow(deploy_data)) {
-    
     row <- deploy_data[i, ]
-    
     target_dir <- row$target_dir
     
-    # Ensure target directory exists (safety check)
-    if (is.na(target_dir) || !dir.exists(target_dir)) {
-        message("Skipping row ", i, ": Directory not found -> ", target_dir)
-        next
-    }
+    # Safety check
+    if (is.na(target_dir)) next
     
-    # --- A. Gather Assets ---
+    # Check if directory exists, if not create it (though logic implies it should exist from previous steps)
+    if (!dir.exists(target_dir)) dir.create(target_dir, recursive = TRUE)
     
-    # Find Images (jpg, jpeg, jpe - case insensitive)
-    images <- dir_ls(target_dir, regexp = "(?i)\\.jpe?g?$") %>% path_file()
+    # Determine where the CSS is relative to this directory
+    # Works structure: works/Owner/Directory
+    # So we typically need ../../styles.css
+    # Use fs::path_rel for robustness if needed, but manual is fine for fixed structure
+    css_rel_path <- "../../styles.css" 
     
-    # Find PDFs
+    # --- Gather Files ---
+    images <- dir_ls(target_dir, regexp = "(?i)\\.jp.*$") %>% path_file()
     pdfs <- dir_ls(target_dir, regexp = "(?i)\\.pdf$") %>% path_file()
     
-    # --- B. Build Data Table Content ---
+    # --- Build Table Data ---
+    # Exclude target_dir and Title (since Title is page title)
+    display_cols <- row %>% select(-target_dir, -Title)
     
-    # Exclude 'target_dir' from the display table
-    display_data <- row %>% select(-target_dir)
-    
-    # Convert row to a long format for the table: Attribute | Value
-    table_rows <- lapply(names(display_data), function(col_name) {
-        val <- as.character(display_data[[col_name]])
-        if (is.na(val) || val == "") return(NULL) # Skip empty fields
+    table_rows <- lapply(names(display_cols), function(col_name) {
+        val <- display_cols[[col_name]]
+        
+        # Skip empty/NA
+        if (is.na(val) || as.character(val) == "") return(NULL)
+        
+        # Special handling for Links column
+        content <- if (col_name == "Links") {
+            format_links(as.character(val))
+        } else {
+            as.character(val)
+        }
+        
         tags$tr(
             tags$th(col_name),
-            tags$td(val)
+            tags$td(content)
         )
     })
     # Remove NULLs
     table_rows <- table_rows[!sapply(table_rows, is.null)]
     
     
-    # --- C. Calculate Relative Path to CSS ---
-    # Assuming styles.css is in the 'works' root.
-    # We use fs::path_rel to determine exact relative path from target_dir to works/styles.css
-    css_path_abs <- path_abs(file.path(works_root, css_filename))
-    target_dir_abs <- path_abs(target_dir)
-    css_rel_path <- path_rel(css_path_abs, start = target_dir_abs)
-    
-    
-    # --- D. Build HTML Page ---
+    # --- Build HTML Page ---
+    page_title <- if(is.na(row$Title)) paste("Record", row$ID) else row$Title
     
     page <- tags$html(
         tags$head(
-            tags$title(paste(row$Title, "-", row$Artist)),
+            tags$title(page_title),
             tags$meta(charset = "utf-8"),
             tags$meta(name = "viewport", content = "width=device-width, initial-scale=1"),
-            tags$link(rel = "stylesheet", href = css_rel_path)
+            tags$link(rel = "stylesheet", href = css_rel_path),
+            # Add simple JS for Lightbox
+            tags$script(HTML("
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      "))
         ),
         tags$body(
             div(class = "container",
                 
-                # Header
-                tags$header(
-                    h1(row$Title),
-                    h2(row$Artist)
-                ),
+                h1(page_title),
                 
-                # Flex Container for Data + Files
                 div(class = "content-grid",
                     
-                    # Left: Data Table
-                    div(class = "data-section",
+                    # Left Column: Table + PDFs
+                    div(class = "info-section",
                         tags$table(class = "info-table",
                                    tags$tbody(table_rows)
-                        )
+                        ),
+                        
+                        # PDFs
+                        if (length(pdfs) > 0) {
+                            div(class = "pdf-section",
+                                h4("Documents"),
+                                lapply(pdfs, function(pdf) {
+                                    div(class = "pdf-link",
+                                        span(class = "pdf-icon", "📄"),
+                                        a(href = pdf, target = "_blank", pdf)
+                                    )
+                                })
+                            )
+                        }
                     ),
                     
-                    # Right: PDF Files (Only show section if PDFs exist)
-                    if (length(pdfs) > 0) {
-                        div(class = "files-section",
-                            h3(class = "section-title", "Documents"),
-                            lapply(pdfs, function(pdf) {
-                                a(class = "file-link", href = pdf, target = "_blank",
-                                  span(class = "icon", "PDF"),
-                                  pdf
-                                )
-                            })
-                        )
-                    } else {
-                        # Optional: Empty placeholder or nothing
-                        NULL 
-                    }
+                    # Right Column: Images
+                    div(class = "gallery-section",
+                        if (length(images) > 0) {
+                            div(class = "gallery",
+                                lapply(images, function(img) {
+                                    tags$img(src = img, 
+                                             class = "gallery-img", 
+                                             onclick = sprintf("openLightbox('%s')", img),
+                                             alt = "Artwork Image")
+                                })
+                            )
+                        } else {
+                            p("No images available.", style = "color: #999; font-style: italic;")
+                        }
+                    )
                 ),
                 
-                # Bottom: Image Gallery
-                if (length(images) > 0) {
-                    div(class = "gallery",
-                        lapply(images, function(img) {
-                            div(class = "img-wrapper",
-                                tags$img(src = img, alt = paste("Image of", row$Title))
-                            )
-                        })
-                    )
-                } else {
-                    div(class = "footer", "No images available.")
-                }
+                # Lightbox Container (Hidden by default)
+                div(id = "lightbox", class = "lightbox",
+                    span(class = "close-btn", "×", onclick = "closeLightbox()"),
+                    tags$img(id = "lightbox-img", class = "lightbox-img")
+                )
             )
         )
     )
     
-    # --- E. Write File ---
-    index_path <- file.path(target_dir, "index.html")
-    save_html(page, index_path)
-    
-    message("Generated index.html for: ", row$Title)
+    # Write file
+    save_html(page, file.path(target_dir, "index.html"))
+    message("Generated index for: ", target_dir)
 }
 
-message("All HTML files generated.")
+message("Processing complete.")

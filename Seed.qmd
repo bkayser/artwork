@@ -168,6 +168,38 @@ Now we've switched to using a master spreadsheet.  It's no longer read-only.
 
 ```{r}
 master <- read_csv("Master.csv")
+# Function to clean strings for file paths
+clean_name <- function(x) {
+  if (is.na(x)) return("Unknown")
+  # Replace invalid chars with nothing, keep alphanumeric, space, dash, underscore
+  cleaned <- str_replace_all(x, "[^a-zA-Z0-9 \\-_]", "") |> str_trim()
+  if (nchar(cleaned) == 0) return("Unknown")
+  return(cleaned)
+}
+master$target_dir = ''
+# Add the target directories
+for (i in 1:nrow(master)) {
+  # 1. Extract Info
+  r <- master[i, ]
+  
+  rec_id <- r$ID
+  
+  # Handle NA values
+  rec_owner <- if (is.na(r$Owner)) "Unclaimed" else r$Owner
+  rec_artist <- if (is.na(r$Artist)) "Unknown" else r$Artist
+  
+  # 2. Create Owner Directory
+  safe_owner <- file.path("Works", clean_name(rec_owner))
+
+    # 3. Create Sub-directory (Artist--ID)
+  .search <- str_match(rec_artist, "^(.*), ?(.*)$")
+  if (!is.na(.search[,1])) {
+      sub_dir_name <- paste0(.search[,3], " ", .search[,2], "--", rec_id) |> clean_name()
+  } else {
+      sub_dir_name <- paste0(clean_name(rec_artist), "--", rec_id)
+  }
+  master$target_dir[i] <- file.path(safe_owner, sub_dir_name)
+}
     
 ```
 # Create Directory Structure
@@ -184,17 +216,6 @@ ID.
 #| label: directories
 #| eval: FALSE
 
-# --- Helper Functions ---
-
-# Function to clean strings for file paths
-clean_name <- function(x) {
-  if (is.na(x)) return("Unknown")
-  # Replace invalid chars with nothing, keep alphanumeric, space, dash, underscore
-  cleaned <- str_replace_all(x, "[^a-zA-Z0-9 \\-_]", "") |> str_trim()
-  if (nchar(cleaned) == 0) return("Unknown")
-  return(cleaned)
-}
-
 # --- Step 2: Ensure Directory Structure Exists for ALL Records ---
 # This block iterates through every record in the DB and creates the folder structure
 # Owner/Artist--ID, even if there are no photos for it yet.
@@ -206,45 +227,13 @@ for (i in 1:nrow(master)) {
   r <- master[i, ]
   
   rec_id <- r$ID
-  
-  # Handle NA values
-  rec_owner <- if (is.na(r$Owner)) "Unclaimed" else r$Owner
-  rec_artist <- if (is.na(r$Artist)) "Unknown" else r$Artist
-  
-  # 2. Create Owner Directory
-  safe_owner <- file.path("Works", clean_name(rec_owner))
-  
-  if (!dir.exists(safe_owner)) {
-    dir.create(safe_owner)
-    message("Created owner directory: ", safe_owner)
-  }
-  
-  # 3. Create Sub-directory (Artist--ID)
-  .search <- str_match(rec_artist, "^(.*), ?(.*)$")
-  if (!is.na(.search[,1])) {
-      sub_dir_name <- paste0(.search[,3], " ", .search[,2], "--", rec_id) |> clean_name()
-  } else {
-      sub_dir_name <- paste0(clean_name(rec_artist), "--", rec_id)
-  }
-  target_dir <- file.path(safe_owner, sub_dir_name)
+  target_dir <- r$target_dir
   
   if (!dir.exists(target_dir)) {
     #dir.create(target_dir)
     message("Target directory not found: ", target_dir)
   } else {
-      # master$target_dir[i] <- as.character(target_dir)
-      # fsid <- master$ID.FS[i] |> as.integer()
-      # if (!is.na(fsid)) {
-      #     to_copy <- filter(image_works, ID.FS == fsid)
-      #     if (nrow(to_copy) > 0) {
-      #         for (j in 1:nrow(to_copy)) {
-      #             if (!file.exists(file.path(target_dir, basename(to_copy$image[j])))) {
-      #                 file.copy(to_copy$image[j], target_dir)
-      #                 message("Copy to ", target_dir, ", ", to_copy$image[j])
-      #             }
-      #         }
-      #     }
-      # }
+      master$target_dir[i] <- target_dir
   }
 }
 message("Directory structure check complete.")
@@ -267,14 +256,15 @@ master$Links |> na.omit() |> sort() |> unique() |>
 deploy_info <- select(.master, -ID.FS, -ID.BK, -Value.FS, -Value.Safeco) |> 
     rename(Value = Value.DRK) |>
     left_join(read_csv("artists.csv")) |>
-    select(ID,
-           `Artist Name`,
+    select(target_dir,
+           ID,
+           Artist = `Artist Name`,
            Born = `Year of Birth`,
            Died = `Year of Death`,
            Hometown,
            Bio = Description,
            Links,
-           Work = Title,
+           Title,
            Medium,
            Size,
            Details,
@@ -285,7 +275,7 @@ deploy_info <- select(.master, -ID.FS, -ID.BK, -Value.FS, -Value.Safeco) |>
            Distributed,
            Owner)
 
-write_csv(deploy_info, "deploy_info.csv", na="\n")
+write_csv(deploy_info, "deploy_info.csv", na="")
 
 ```
 # Create Documents
