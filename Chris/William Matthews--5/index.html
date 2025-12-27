@@ -4,20 +4,33 @@
 <meta charset="utf-8"/>
 <style>body{background-color:white;}</style>
 
-  <title>Cowboy, Bedroll &amp; Dog - Mathews</title>
+  <title>Cowboy, Bedroll &amp; Dog</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      </script>
 </head>
 <html>
   <body>
     <div class="container">
-      <header>
-        <h1>Cowboy, Bedroll &amp; Dog</h1>
-        <h2>Mathews</h2>
-      </header>
+      <h1>Cowboy, Bedroll &amp; Dog</h1>
       <div class="content-grid">
-        <div class="data-section">
+        <div class="info-section">
           <table class="info-table">
             <tbody>
               <tr>
@@ -26,47 +39,39 @@
               </tr>
               <tr>
                 <th>Artist</th>
-                <td>Mathews</td>
+                <td>William Matthews</td>
               </tr>
               <tr>
-                <th>Title</th>
-                <td>Cowboy, Bedroll &amp; Dog</td>
+                <th>Hometown</th>
+                <td>Denver, CO</td>
+              </tr>
+              <tr>
+                <th>Bio</th>
+                <td>Watercolor painter known for depictions of the American West, album covers, and murals,.</td>
+              </tr>
+              <tr>
+                <th>Links</th>
+                <td>
+                  <div>
+                    <a href="https://williammatthewsstudio.com/paintings/high-mountain-sage/" target="_blank">williammatthewsstudio.com</a>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <th>Medium</th>
                 <td>Watercolor</td>
               </tr>
               <tr>
-                <th>Description</th>
-                <td>Original watercolor almost certainly overinsured; compare with https://williammatthewsstudio.com/paintings/high-mountain-sage/; acquired from Broschofsky; size = 38x29; insured (#5)</td>
-              </tr>
-              <tr>
-                <th>Details</th>
-                <td>Original watercolor almost certainly overinsured; compare with https://williammatthewsstudio.com/paintings/high-mountain-sage/</td>
-              </tr>
-              <tr>
                 <th>Size</th>
                 <td>38x29</td>
               </tr>
               <tr>
-                <th>Category</th>
-                <td>Fine Art</td>
-              </tr>
-              <tr>
-                <th>Owner</th>
-                <td>Chris</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>Scottsdale</td>
+                <th>Details</th>
+                <td>Compare with https://williammatthewsstudio.com/paintings/high-mountain-sage/</td>
               </tr>
               <tr>
                 <th>Gallery</th>
                 <td>Broschofsky</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>Divide</td>
               </tr>
               <tr>
                 <th>Value</th>
@@ -77,23 +82,30 @@
                 <td>1991</td>
               </tr>
               <tr>
+                <th>Location</th>
+                <td>Scottsdale</td>
+              </tr>
+              <tr>
                 <th>Distributed</th>
                 <td>2025</td>
+              </tr>
+              <tr>
+                <th>Owner</th>
+                <td>Chris</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <div class="gallery-section">
+          <div class="gallery">
+            <img src="4c1ef26d7f4f2f8b4692b233fae4cb44.jpe" class="gallery-img" onclick="openLightbox(&#39;4c1ef26d7f4f2f8b4692b233fae4cb44.jpe&#39;)" alt="Artwork Image"/>
+            <img src="5--Cowboy Bedroll  Dog - 00.jpg" class="gallery-img" onclick="openLightbox(&#39;5--Cowboy Bedroll  Dog - 00.jpg&#39;)" alt="Artwork Image"/>
+          </div>
+        </div>
       </div>
-      <div class="gallery">
-        <div class="img-wrapper">
-          <img src="4c1ef26d7f4f2f8b4692b233fae4cb44.jpe" alt="Image of Cowboy, Bedroll &amp; Dog"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="5--Cowboy Bedroll  Dog - 00.jpg" alt="Image of Cowboy, Bedroll &amp; Dog"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="5--Cowboy Bedroll  Dog - 01.jpg" alt="Image of Cowboy, Bedroll &amp; Dog"/>
-        </div>
+      <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img"/>
       </div>
     </div>
   </body>

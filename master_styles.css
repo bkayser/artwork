@@ -4,8 +4,41 @@
       background-color: #f4f4f9;
       color: #333;
       margin: 0;
-      padding: 2rem;
+      padding: 0; /* Remove padding to accommodate fixed navbar */
+      padding-top: 80px; /* Space for the fixed navbar */
   }
+  
+  /* Navbar Styling */
+  .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #2c3e50;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+  }
+  
+  .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+  }
+  
+  .navbar a:hover {
+      background-color: rgba(255,255,255,0.1);
+  }
+
   .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -17,9 +50,12 @@
   h1 { text-align: center; color: #2c3e50; margin-bottom: 2rem; }
   
   /* Owner Section Styling */
-  .owner-section { margin-bottom: 3rem; }
+  .owner-section { 
+      margin-bottom: 3rem; 
+      scroll-margin-top: 100px; /* Offset for sticky header when linking */
+  }
   .owner-header {
-      background: #2c3e50;
+      background: #34495e;
       color: white;
       padding: 0.75rem 1.5rem;
       border-radius: 4px;
@@ -44,7 +80,8 @@
       font-weight: 600;
       color: #555;
       position: sticky;
-      top: 0;
+      top: 80px; /* Adjust based on navbar height */
+      z-index: 900;
   }
   table.inventory tr:hover { background-color: #fafafa; }
   
@@ -74,8 +111,8 @@
   .popup-img {
       display: none; /* Hidden by default */
       position: absolute;
-      z-index: 999;
-      top: -100px;       /* Adjusted to center better with larger image */
+      z-index: 9999;
+      top: -200px;       /* Adjusted to center better with larger image */
       left: 170px;      /* To the right of the thumbnail */
       width: 800px;     /* CHANGED: 800px width */
       height: 800px;    /* CHANGED: 800px height */

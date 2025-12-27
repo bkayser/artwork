@@ -4,20 +4,33 @@
 <meta charset="utf-8"/>
 <style>body{background-color:white;}</style>
 
-  <title>Conversation - Burt, Robert</title>
+  <title>Conversation</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      </script>
 </head>
 <html>
   <body>
     <div class="container">
-      <header>
-        <h1>Conversation</h1>
-        <h2>Burt, Robert</h2>
-      </header>
+      <h1>Conversation</h1>
       <div class="content-grid">
-        <div class="data-section">
+        <div class="info-section">
           <table class="info-table">
             <tbody>
               <tr>
@@ -26,43 +39,31 @@
               </tr>
               <tr>
                 <th>Artist</th>
-                <td>Burt, Robert</td>
+                <td>Robert Burt</td>
               </tr>
               <tr>
-                <th>Title</th>
-                <td>Conversation</td>
+                <th>Bio</th>
+                <td>Acrylic painter known for works inspired by the open road, such as the 'Cruise Control' series,.</td>
+              </tr>
+              <tr>
+                <th>Links</th>
+                <td>
+                  <div>
+                    <a href="https://renaissancerules.wordpress.com/2015/02/24/robert-burt-artist-of-mystery-adventure-and-joy/" target="_blank">renaissancerules.wordpress.com</a>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <th>Medium</th>
                 <td>Acrylic</td>
               </tr>
               <tr>
-                <th>Description</th>
-                <td>Acrylic; acquired from Xanadu; size = 28x22 (#112)</td>
-              </tr>
-              <tr>
                 <th>Size</th>
                 <td>28x22</td>
               </tr>
               <tr>
-                <th>Category</th>
-                <td>Fine Art</td>
-              </tr>
-              <tr>
-                <th>Owner</th>
-                <td>Jean</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>Scottsdale</td>
-              </tr>
-              <tr>
                 <th>Gallery</th>
                 <td>Xanadu</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>Divide</td>
               </tr>
               <tr>
                 <th>Value</th>
@@ -73,27 +74,36 @@
                 <td>2005</td>
               </tr>
               <tr>
+                <th>Location</th>
+                <td>Scottsdale</td>
+              </tr>
+              <tr>
                 <th>Distributed</th>
                 <td>2025</td>
               </tr>
+              <tr>
+                <th>Owner</th>
+                <td>Jean</td>
+              </tr>
             </tbody>
           </table>
+          <div class="pdf-section">
+            <h4>Documents</h4>
+            <div class="pdf-link">
+              <span class="pdf-icon">📄</span>
+              <a href="Receipt.pdf" target="_blank">Receipt.pdf</a>
+            </div>
+          </div>
         </div>
-        <div class="files-section">
-          <h3 class="section-title">Documents</h3>
-          <a class="file-link" href="Receipt.pdf" target="_blank">
-            <span class="icon">PDF</span>
-            Receipt.pdf
-          </a>
+        <div class="gallery-section">
+          <div class="gallery">
+            <img src="112--Conversation - 00.jpg" class="gallery-img" onclick="openLightbox(&#39;112--Conversation - 00.jpg&#39;)" alt="Artwork Image"/>
+          </div>
         </div>
       </div>
-      <div class="gallery">
-        <div class="img-wrapper">
-          <img src="112--Conversation - 00.jpg" alt="Image of Conversation"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="1fe57393b3dc8b7053f63435abdb4899.jpe" alt="Image of Conversation"/>
-        </div>
+      <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img"/>
       </div>
     </div>
   </body>

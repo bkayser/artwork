@@ -4,20 +4,33 @@
 <meta charset="utf-8"/>
 <style>body{background-color:white;}</style>
 
-  <title>Mexican Road Trip - Burt, Robert</title>
+  <title>Mexican Road Trip</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      </script>
 </head>
 <html>
   <body>
     <div class="container">
-      <header>
-        <h1>Mexican Road Trip</h1>
-        <h2>Burt, Robert</h2>
-      </header>
+      <h1>Mexican Road Trip</h1>
       <div class="content-grid">
-        <div class="data-section">
+        <div class="info-section">
           <table class="info-table">
             <tbody>
               <tr>
@@ -26,43 +39,31 @@
               </tr>
               <tr>
                 <th>Artist</th>
-                <td>Burt, Robert</td>
+                <td>Robert Burt</td>
               </tr>
               <tr>
-                <th>Title</th>
-                <td>Mexican Road Trip</td>
+                <th>Bio</th>
+                <td>Acrylic painter known for works inspired by the open road, such as the 'Cruise Control' series,.</td>
+              </tr>
+              <tr>
+                <th>Links</th>
+                <td>
+                  <div>
+                    <a href="https://renaissancerules.wordpress.com/2015/02/24/robert-burt-artist-of-mystery-adventure-and-joy/" target="_blank">renaissancerules.wordpress.com</a>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <th>Medium</th>
                 <td>Acrylic</td>
               </tr>
               <tr>
-                <th>Description</th>
-                <td>Acrylic; no frame, black border; acquired from Xanadu  Gallery; size = 48x48; insured (#68)</td>
-              </tr>
-              <tr>
                 <th>Size</th>
                 <td>48x48</td>
               </tr>
               <tr>
-                <th>Category</th>
-                <td>Fine Art</td>
-              </tr>
-              <tr>
-                <th>Owner</th>
-                <td>Cathy</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>Scottsdale</td>
-              </tr>
-              <tr>
                 <th>Gallery</th>
                 <td>Xanadu  Gallery</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>Divide</td>
               </tr>
               <tr>
                 <th>Value</th>
@@ -73,31 +74,41 @@
                 <td>2007</td>
               </tr>
               <tr>
+                <th>Location</th>
+                <td>Scottsdale</td>
+              </tr>
+              <tr>
                 <th>Distributed</th>
                 <td>2025</td>
               </tr>
+              <tr>
+                <th>Owner</th>
+                <td>Cathy</td>
+              </tr>
             </tbody>
           </table>
+          <div class="pdf-section">
+            <h4>Documents</h4>
+            <div class="pdf-link">
+              <span class="pdf-icon">📄</span>
+              <a href="Receipt.pdf" target="_blank">Receipt.pdf</a>
+            </div>
+            <div class="pdf-link">
+              <span class="pdf-icon">📄</span>
+              <a href="Show.pdf" target="_blank">Show.pdf</a>
+            </div>
+          </div>
         </div>
-        <div class="files-section">
-          <h3 class="section-title">Documents</h3>
-          <a class="file-link" href="Receipt.pdf" target="_blank">
-            <span class="icon">PDF</span>
-            Receipt.pdf
-          </a>
-          <a class="file-link" href="Show.pdf" target="_blank">
-            <span class="icon">PDF</span>
-            Show.pdf
-          </a>
+        <div class="gallery-section">
+          <div class="gallery">
+            <img src="68--Mexican Road Trip - 00.jpg" class="gallery-img" onclick="openLightbox(&#39;68--Mexican Road Trip - 00.jpg&#39;)" alt="Artwork Image"/>
+            <img src="e11c28bf04739d7ba82bd7c269650951.jpe" class="gallery-img" onclick="openLightbox(&#39;e11c28bf04739d7ba82bd7c269650951.jpe&#39;)" alt="Artwork Image"/>
+          </div>
         </div>
       </div>
-      <div class="gallery">
-        <div class="img-wrapper">
-          <img src="68--Mexican Road Trip - 00.jpg" alt="Image of Mexican Road Trip"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="e11c28bf04739d7ba82bd7c269650951.jpe" alt="Image of Mexican Road Trip"/>
-        </div>
+      <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img"/>
       </div>
     </div>
   </body>

@@ -4,20 +4,33 @@
 <meta charset="utf-8"/>
 <style>body{background-color:white;}</style>
 
-  <title>Bronze Table - Newell, Bruce</title>
+  <title>Bronze Table</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      </script>
 </head>
 <html>
   <body>
     <div class="container">
-      <header>
-        <h1>Bronze Table</h1>
-        <h2>Newell, Bruce</h2>
-      </header>
+      <h1>Bronze Table</h1>
       <div class="content-grid">
-        <div class="data-section">
+        <div class="info-section">
           <table class="info-table">
             <tbody>
               <tr>
@@ -26,39 +39,23 @@
               </tr>
               <tr>
                 <th>Artist</th>
-                <td>Newell, Bruce</td>
+                <td>Bruce Newell</td>
               </tr>
               <tr>
-                <th>Title</th>
-                <td>Bronze Table</td>
+                <th>Born</th>
+                <td>1939</td>
+              </tr>
+              <tr>
+                <th>Bio</th>
+                <td>Sculptor working in bronze, known for creating functional art such as bronze tables,.</td>
               </tr>
               <tr>
                 <th>Medium</th>
                 <td>Bronze</td>
               </tr>
               <tr>
-                <th>Description</th>
-                <td>Bronze; acquired from Anne Reed; 30 high, 14 deep, 60 long; insured (#31)</td>
-              </tr>
-              <tr>
-                <th>Category</th>
-                <td>Fine Art</td>
-              </tr>
-              <tr>
-                <th>Owner</th>
-                <td>Jean</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>Scottsdale</td>
-              </tr>
-              <tr>
                 <th>Gallery</th>
                 <td>Anne Reed</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>Divide</td>
               </tr>
               <tr>
                 <th>Value</th>
@@ -69,31 +66,40 @@
                 <td>1997</td>
               </tr>
               <tr>
+                <th>Location</th>
+                <td>Scottsdale</td>
+              </tr>
+              <tr>
                 <th>Distributed</th>
                 <td>2025</td>
               </tr>
+              <tr>
+                <th>Owner</th>
+                <td>Jean</td>
+              </tr>
             </tbody>
           </table>
+          <div class="pdf-section">
+            <h4>Documents</h4>
+            <div class="pdf-link">
+              <span class="pdf-icon">📄</span>
+              <a href="Invoice and Certificate.pdf" target="_blank">Invoice and Certificate.pdf</a>
+            </div>
+            <div class="pdf-link">
+              <span class="pdf-icon">📄</span>
+              <a href="Receipt.pdf" target="_blank">Receipt.pdf</a>
+            </div>
+          </div>
         </div>
-        <div class="files-section">
-          <h3 class="section-title">Documents</h3>
-          <a class="file-link" href="Invoice and Certificate.pdf" target="_blank">
-            <span class="icon">PDF</span>
-            Invoice and Certificate.pdf
-          </a>
-          <a class="file-link" href="Receipt.pdf" target="_blank">
-            <span class="icon">PDF</span>
-            Receipt.pdf
-          </a>
+        <div class="gallery-section">
+          <div class="gallery">
+            <img src="31--Bronze Table - 00.jpg" class="gallery-img" onclick="openLightbox(&#39;31--Bronze Table - 00.jpg&#39;)" alt="Artwork Image"/>
+          </div>
         </div>
       </div>
-      <div class="gallery">
-        <div class="img-wrapper">
-          <img src="31--Bronze Table - 00.jpg" alt="Image of Bronze Table"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="c0da484de6dcce3b3abcf197f6d42c2e.jpe" alt="Image of Bronze Table"/>
-        </div>
+      <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img"/>
       </div>
     </div>
   </body>

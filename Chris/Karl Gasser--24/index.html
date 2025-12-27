@@ -4,20 +4,33 @@
 <meta charset="utf-8"/>
 <style>body{background-color:white;}</style>
 
-  <title>From where, where to - Gasser, Karl</title>
+  <title>From where, where to</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      </script>
 </head>
 <html>
   <body>
     <div class="container">
-      <header>
-        <h1>From where, where to</h1>
-        <h2>Gasser, Karl</h2>
-      </header>
+      <h1>From where, where to</h1>
       <div class="content-grid">
-        <div class="data-section">
+        <div class="info-section">
           <table class="info-table">
             <tbody>
               <tr>
@@ -26,43 +39,35 @@
               </tr>
               <tr>
                 <th>Artist</th>
-                <td>Gasser, Karl</td>
+                <td>Karl Gasser</td>
               </tr>
               <tr>
-                <th>Title</th>
-                <td>From where, where to</td>
+                <th>Born</th>
+                <td>1948</td>
+              </tr>
+              <tr>
+                <th>Hometown</th>
+                <td>Pardell, Italy</td>
+              </tr>
+              <tr>
+                <th>Bio</th>
+                <td>Painter who uses a wet-in-wet watercolor technique to depict rural life and social statements regarding the environment,.</td>
               </tr>
               <tr>
                 <th>Medium</th>
                 <td>Watercolor</td>
               </tr>
               <tr>
-                <th>Description</th>
-                <td>Old man with a rose.  Watercolor; acquired from Artist; size = 29x22 in (#24)</td>
-              </tr>
-              <tr>
                 <th>Size</th>
                 <td>29x22 in</td>
               </tr>
               <tr>
-                <th>Category</th>
-                <td>Fine Art</td>
-              </tr>
-              <tr>
-                <th>Owner</th>
-                <td>Chris</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>Portland</td>
+                <th>Details</th>
+                <td>Old man with a rose.</td>
               </tr>
               <tr>
                 <th>Gallery</th>
                 <td>Artist</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>Completed</td>
               </tr>
               <tr>
                 <th>Value</th>
@@ -73,30 +78,37 @@
                 <td>1985</td>
               </tr>
               <tr>
+                <th>Location</th>
+                <td>Portland</td>
+              </tr>
+              <tr>
                 <th>Distributed</th>
                 <td>2021</td>
               </tr>
+              <tr>
+                <th>Owner</th>
+                <td>Chris</td>
+              </tr>
             </tbody>
           </table>
+          <div class="pdf-section">
+            <h4>Documents</h4>
+            <div class="pdf-link">
+              <span class="pdf-icon">📄</span>
+              <a href="Artist Info.pdf" target="_blank">Artist Info.pdf</a>
+            </div>
+          </div>
         </div>
-        <div class="files-section">
-          <h3 class="section-title">Documents</h3>
-          <a class="file-link" href="Artist Info.pdf" target="_blank">
-            <span class="icon">PDF</span>
-            Artist Info.pdf
-          </a>
+        <div class="gallery-section">
+          <div class="gallery">
+            <img src="24--Old Man  Rose - 00.jpg" class="gallery-img" onclick="openLightbox(&#39;24--Old Man  Rose - 00.jpg&#39;)" alt="Artwork Image"/>
+            <img src="24--Old Man  Rose - 01.jpg" class="gallery-img" onclick="openLightbox(&#39;24--Old Man  Rose - 01.jpg&#39;)" alt="Artwork Image"/>
+          </div>
         </div>
       </div>
-      <div class="gallery">
-        <div class="img-wrapper">
-          <img src="24--Old Man  Rose - 00.jpg" alt="Image of From where, where to"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="24--Old Man  Rose - 01.jpg" alt="Image of From where, where to"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="bb928e7feb728e48ca4b6a407a8257b7.jpe" alt="Image of From where, where to"/>
-        </div>
+      <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img"/>
       </div>
     </div>
   </body>

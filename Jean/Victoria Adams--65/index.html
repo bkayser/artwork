@@ -4,20 +4,33 @@
 <meta charset="utf-8"/>
 <style>body{background-color:white;}</style>
 
-  <title>Things about Sky #43 - Adams, Victoria</title>
+  <title>Things about Sky #43</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      </script>
 </head>
 <html>
   <body>
     <div class="container">
-      <header>
-        <h1>Things about Sky #43</h1>
-        <h2>Adams, Victoria</h2>
-      </header>
+      <h1>Things about Sky #43</h1>
       <div class="content-grid">
-        <div class="data-section">
+        <div class="info-section">
           <table class="info-table">
             <tbody>
               <tr>
@@ -26,43 +39,39 @@
               </tr>
               <tr>
                 <th>Artist</th>
-                <td>Adams, Victoria</td>
+                <td>Victoria Adams</td>
               </tr>
               <tr>
-                <th>Title</th>
-                <td>Things about Sky #43</td>
+                <th>Born</th>
+                <td>1950</td>
+              </tr>
+              <tr>
+                <th>Hometown</th>
+                <td>Columbus, OH</td>
+              </tr>
+              <tr>
+                <th>Bio</th>
+                <td>Landscape painter utilizing traditional oils; known for minimalist, luminous skyscapes and paintings that serve as meditations rather than narrative backdrops,,.</td>
+              </tr>
+              <tr>
+                <th>Links</th>
+                <td>
+                  <div>
+                    <a href="https://www.victoriaadamsart.com/" target="_blank">www.victoriaadamsart.com</a>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <th>Medium</th>
                 <td>Oil on Canvas</td>
               </tr>
               <tr>
-                <th>Description</th>
-                <td>Oil on Canvas; acquired from Leach Gallery; size = 12x12 (#65)</td>
-              </tr>
-              <tr>
                 <th>Size</th>
                 <td>12x12</td>
               </tr>
               <tr>
-                <th>Category</th>
-                <td>Fine Art</td>
-              </tr>
-              <tr>
-                <th>Owner</th>
-                <td>Jean</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>Portland</td>
-              </tr>
-              <tr>
                 <th>Gallery</th>
                 <td>Leach Gallery</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>Completed</td>
               </tr>
               <tr>
                 <th>Value</th>
@@ -73,30 +82,37 @@
                 <td>2003</td>
               </tr>
               <tr>
+                <th>Location</th>
+                <td>Portland</td>
+              </tr>
+              <tr>
                 <th>Distributed</th>
                 <td>2021</td>
               </tr>
+              <tr>
+                <th>Owner</th>
+                <td>Jean</td>
+              </tr>
             </tbody>
           </table>
+          <div class="pdf-section">
+            <h4>Documents</h4>
+            <div class="pdf-link">
+              <span class="pdf-icon">📄</span>
+              <a href="Adams.pdf" target="_blank">Adams.pdf</a>
+            </div>
+          </div>
         </div>
-        <div class="files-section">
-          <h3 class="section-title">Documents</h3>
-          <a class="file-link" href="Adams.pdf" target="_blank">
-            <span class="icon">PDF</span>
-            Adams.pdf
-          </a>
+        <div class="gallery-section">
+          <div class="gallery">
+            <img src="65--Things about Sky 43 - 00.jpg" class="gallery-img" onclick="openLightbox(&#39;65--Things about Sky 43 - 00.jpg&#39;)" alt="Artwork Image"/>
+            <img src="65--Things about Sky 43 - 01.jpg" class="gallery-img" onclick="openLightbox(&#39;65--Things about Sky 43 - 01.jpg&#39;)" alt="Artwork Image"/>
+          </div>
         </div>
       </div>
-      <div class="gallery">
-        <div class="img-wrapper">
-          <img src="5303559854d35e7f4e7d2b30a00bdf48.jpe" alt="Image of Things about Sky #43"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="65--Things about Sky 43 - 00.jpg" alt="Image of Things about Sky #43"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="65--Things about Sky 43 - 01.jpg" alt="Image of Things about Sky #43"/>
-        </div>
+      <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img"/>
       </div>
     </div>
   </body>

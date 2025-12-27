@@ -4,20 +4,33 @@
 <meta charset="utf-8"/>
 <style>body{background-color:white;}</style>
 
-  <title>Presence - Coignard, James</title>
+  <title>Presence</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      </script>
 </head>
 <html>
   <body>
     <div class="container">
-      <header>
-        <h1>Presence</h1>
-        <h2>Coignard, James</h2>
-      </header>
+      <h1>Presence</h1>
       <div class="content-grid">
-        <div class="data-section">
+        <div class="info-section">
           <table class="info-table">
             <tbody>
               <tr>
@@ -26,19 +39,15 @@
               </tr>
               <tr>
                 <th>Artist</th>
-                <td>Coignard, James</td>
-              </tr>
-              <tr>
-                <th>Title</th>
-                <td>Presence</td>
+                <td>James Coignard</td>
               </tr>
               <tr>
                 <th>Medium</th>
                 <td>Carborundum Gravure with Collage</td>
               </tr>
               <tr>
-                <th>Description</th>
-                <td>Carbor Print; size = 46x36 framed; acquired from Nahan Galleries (#35)</td>
+                <th>Size</th>
+                <td>100cm x 75cm</td>
               </tr>
               <tr>
                 <th>Details</th>
@@ -46,28 +55,8 @@
 C31985</td>
               </tr>
               <tr>
-                <th>Size</th>
-                <td>100cm x 75cm</td>
-              </tr>
-              <tr>
-                <th>Category</th>
-                <td>Fine Art</td>
-              </tr>
-              <tr>
-                <th>Owner</th>
-                <td>Bill</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>Scottsdale</td>
-              </tr>
-              <tr>
                 <th>Gallery</th>
                 <td>Nahan Galleries</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>Divide</td>
               </tr>
               <tr>
                 <th>Value</th>
@@ -78,31 +67,40 @@ C31985</td>
                 <td>1995</td>
               </tr>
               <tr>
+                <th>Location</th>
+                <td>Scottsdale</td>
+              </tr>
+              <tr>
                 <th>Distributed</th>
                 <td>2025</td>
               </tr>
+              <tr>
+                <th>Owner</th>
+                <td>Bill</td>
+              </tr>
             </tbody>
           </table>
+          <div class="pdf-section">
+            <h4>Documents</h4>
+            <div class="pdf-link">
+              <span class="pdf-icon">📄</span>
+              <a href="Bill - Papart-Coignard-Tobiasse.pdf" target="_blank">Bill - Papart-Coignard-Tobiasse.pdf</a>
+            </div>
+            <div class="pdf-link">
+              <span class="pdf-icon">📄</span>
+              <a href="Certificate.pdf" target="_blank">Certificate.pdf</a>
+            </div>
+          </div>
         </div>
-        <div class="files-section">
-          <h3 class="section-title">Documents</h3>
-          <a class="file-link" href="Bill - Papart-Coignard-Tobiasse.pdf" target="_blank">
-            <span class="icon">PDF</span>
-            Bill - Papart-Coignard-Tobiasse.pdf
-          </a>
-          <a class="file-link" href="Certificate.pdf" target="_blank">
-            <span class="icon">PDF</span>
-            Certificate.pdf
-          </a>
+        <div class="gallery-section">
+          <div class="gallery">
+            <img src="d99bc60808f550dce9422d8cdf7762ef.jpe" class="gallery-img" onclick="openLightbox(&#39;d99bc60808f550dce9422d8cdf7762ef.jpe&#39;)" alt="Artwork Image"/>
+          </div>
         </div>
       </div>
-      <div class="gallery">
-        <div class="img-wrapper">
-          <img src="35--Presence - 00.jpg" alt="Image of Presence"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="d99bc60808f550dce9422d8cdf7762ef.jpe" alt="Image of Presence"/>
-        </div>
+      <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img"/>
       </div>
     </div>
   </body>

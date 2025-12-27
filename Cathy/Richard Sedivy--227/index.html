@@ -4,20 +4,33 @@
 <meta charset="utf-8"/>
 <style>body{background-color:white;}</style>
 
-  <title>Pitch Perfect - Sedivy, Richard</title>
+  <title>Pitch Perfect</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      </script>
 </head>
 <html>
   <body>
     <div class="container">
-      <header>
-        <h1>Pitch Perfect</h1>
-        <h2>Sedivy, Richard</h2>
-      </header>
+      <h1>Pitch Perfect</h1>
       <div class="content-grid">
-        <div class="data-section">
+        <div class="info-section">
           <table class="info-table">
             <tbody>
               <tr>
@@ -26,67 +39,71 @@
               </tr>
               <tr>
                 <th>Artist</th>
-                <td>Sedivy, Richard</td>
+                <td>Richard Sedivy</td>
               </tr>
               <tr>
-                <th>Title</th>
-                <td>Pitch Perfect</td>
+                <th>Born</th>
+                <td>1948</td>
+              </tr>
+              <tr>
+                <th>Hometown</th>
+                <td>Chicago, IL</td>
+              </tr>
+              <tr>
+                <th>Bio</th>
+                <td>Painter known for contemporary landscapes, architectural themes, and the 'Continuum' series,.</td>
               </tr>
               <tr>
                 <th>Medium</th>
-                <td>Oil</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td>oil and acrylic on wood; size = 23.5x28.5; from Hunsaker/Schlesinger Fine Art, Santa Monica; Peter Blake Gallery, insured (#204)</td>
-              </tr>
-              <tr>
-                <th>Details</th>
-                <td>Found in insurance docs, "oil and acrylic on wood"</td>
+                <td>Oil and Acrylic on /Wood</td>
               </tr>
               <tr>
                 <th>Size</th>
                 <td>23.5x28.5</td>
               </tr>
               <tr>
-                <th>Category</th>
-                <td>Fine Art</td>
+                <th>Details</th>
+                <td>from Peter Blake Gallery</td>
               </tr>
               <tr>
-                <th>Owner</th>
-                <td>Cathy</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>Scottsdale</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>Divide</td>
+                <th>Gallery</th>
+                <td>Hunsaker/Schlesinger Fine Art, Santa Monica</td>
               </tr>
               <tr>
                 <th>Value</th>
                 <td>7000</td>
               </tr>
               <tr>
+                <th>Location</th>
+                <td>Scottsdale</td>
+              </tr>
+              <tr>
                 <th>Distributed</th>
                 <td>2025</td>
               </tr>
+              <tr>
+                <th>Owner</th>
+                <td>Cathy</td>
+              </tr>
             </tbody>
           </table>
+          <div class="pdf-section">
+            <h4>Documents</h4>
+            <div class="pdf-link">
+              <span class="pdf-icon">📄</span>
+              <a href="Invoice_20080301.pdf" target="_blank">Invoice_20080301.pdf</a>
+            </div>
+          </div>
         </div>
-        <div class="files-section">
-          <h3 class="section-title">Documents</h3>
-          <a class="file-link" href="Invoice_20080301.pdf" target="_blank">
-            <span class="icon">PDF</span>
-            Invoice_20080301.pdf
-          </a>
+        <div class="gallery-section">
+          <div class="gallery">
+            <img src="907ef811ae593fcfc0499bef6eac890f.jpe" class="gallery-img" onclick="openLightbox(&#39;907ef811ae593fcfc0499bef6eac890f.jpe&#39;)" alt="Artwork Image"/>
+          </div>
         </div>
       </div>
-      <div class="gallery">
-        <div class="img-wrapper">
-          <img src="907ef811ae593fcfc0499bef6eac890f.jpe" alt="Image of Pitch Perfect"/>
-        </div>
+      <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img"/>
       </div>
     </div>
   </body>

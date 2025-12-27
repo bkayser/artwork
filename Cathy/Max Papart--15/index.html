@@ -4,20 +4,33 @@
 <meta charset="utf-8"/>
 <style>body{background-color:white;}</style>
 
-  <title>Renaissance - Papart, Max</title>
+  <title>Renaissance</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close lightbox when clicking outside image
+        window.onclick = function(event) {
+            var modal = document.getElementById('lightbox');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+      </script>
 </head>
 <html>
   <body>
     <div class="container">
-      <header>
-        <h1>Renaissance</h1>
-        <h2>Papart, Max</h2>
-      </header>
+      <h1>Renaissance</h1>
       <div class="content-grid">
-        <div class="data-section">
+        <div class="info-section">
           <table class="info-table">
             <tbody>
               <tr>
@@ -26,43 +39,47 @@
               </tr>
               <tr>
                 <th>Artist</th>
-                <td>Papart, Max</td>
+                <td>Max Papart</td>
               </tr>
               <tr>
-                <th>Title</th>
-                <td>Renaissance</td>
+                <th>Born</th>
+                <td>1911</td>
+              </tr>
+              <tr>
+                <th>Died</th>
+                <td>1994</td>
+              </tr>
+              <tr>
+                <th>Hometown</th>
+                <td>Marseilles, France</td>
+              </tr>
+              <tr>
+                <th>Bio</th>
+                <td>Painter and printmaker known for a surreal Pop Art interpretation of Cubism and carborundum etchings,.</td>
+              </tr>
+              <tr>
+                <th>Links</th>
+                <td>
+                  <div>
+                    <a href="https://www.thematthewsgallery.com/artists/196-max-papart/biography/" target="_blank">www.thematthewsgallery.com</a>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <th>Medium</th>
                 <td>Aquatint</td>
               </tr>
               <tr>
-                <th>Description</th>
-                <td>Aquatint; 37/135 acquired from Nahan; size = 34x28, 39x32 framed  (#15)</td>
-              </tr>
-              <tr>
                 <th>Size</th>
                 <td>34x28</td>
               </tr>
               <tr>
-                <th>Category</th>
-                <td>Fine Art</td>
-              </tr>
-              <tr>
-                <th>Owner</th>
-                <td>Cathy</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>Scottsdale</td>
+                <th>Details</th>
+                <td>Edition 37 of 135</td>
               </tr>
               <tr>
                 <th>Gallery</th>
                 <td>Nahan</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>Divide</td>
               </tr>
               <tr>
                 <th>Value</th>
@@ -73,27 +90,37 @@
                 <td>1992</td>
               </tr>
               <tr>
+                <th>Location</th>
+                <td>Scottsdale</td>
+              </tr>
+              <tr>
                 <th>Distributed</th>
                 <td>2025</td>
               </tr>
+              <tr>
+                <th>Owner</th>
+                <td>Cathy</td>
+              </tr>
             </tbody>
           </table>
+          <div class="pdf-section">
+            <h4>Documents</h4>
+            <div class="pdf-link">
+              <span class="pdf-icon">📄</span>
+              <a href="Invoice.pdf" target="_blank">Invoice.pdf</a>
+            </div>
+          </div>
         </div>
-        <div class="files-section">
-          <h3 class="section-title">Documents</h3>
-          <a class="file-link" href="Invoice.pdf" target="_blank">
-            <span class="icon">PDF</span>
-            Invoice.pdf
-          </a>
+        <div class="gallery-section">
+          <div class="gallery">
+            <img src="22a8f5369f5caab23aed664df3aa9409.jpe" class="gallery-img" onclick="openLightbox(&#39;22a8f5369f5caab23aed664df3aa9409.jpe&#39;)" alt="Artwork Image"/>
+            <img src="Renaissance.jpg" class="gallery-img" onclick="openLightbox(&#39;Renaissance.jpg&#39;)" alt="Artwork Image"/>
+          </div>
         </div>
       </div>
-      <div class="gallery">
-        <div class="img-wrapper">
-          <img src="22a8f5369f5caab23aed664df3aa9409.jpe" alt="Image of Renaissance"/>
-        </div>
-        <div class="img-wrapper">
-          <img src="Renaissance.jpg" alt="Image of Renaissance"/>
-        </div>
+      <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img"/>
       </div>
     </div>
   </body>
