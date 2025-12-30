@@ -31,6 +31,22 @@ css_filename <- "styles.css"
 if (!file.exists(csv_file)) stop("deploy_info.csv not found!")
 deploy_data <- read_csv(csv_file, show_col_types = FALSE)
 
+# --- 1a. Extract Owner List for Navbar ---
+# Extract Owner from target_dir (format: works/Owner/Artist--ID)
+deploy_data <- deploy_data %>%
+    mutate(
+        Owner_Dir = sapply(str_split(target_dir, "/"), function(x) {
+            if (length(x) >= 2) x[2] else NA_character_
+        })
+    )
+
+# Get unique owners list for navbar (filter out any NA values)
+owners_list <- deploy_data %>% 
+    pull(Owner_Dir) %>% 
+    .[!is.na(.)] %>%
+    unique() %>% 
+    sort()
+
 # --- 2. Create CSS File ---
 if (!dir.exists(works_root)) dir.create(works_root, recursive = TRUE)
 
@@ -52,6 +68,38 @@ body {
     background-color: var(--bg-color);
     margin: 0;
     padding: 20px;
+    padding-top: 80px; /* Space for the fixed navbar */
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.navbar a:hover {
+    background-color: rgba(255,255,255,0.1);
 }
 
 .container {
@@ -296,6 +344,18 @@ for (i in 1:nrow(deploy_data)) {
     table_rows <- table_rows[!sapply(table_rows, is.null)]
     
     
+    # --- Generate Navbar ---
+    navbar <- div(class = "navbar",
+                  # Add link to main index
+                  a(href = "../../index.html", "Home"),
+                  # Add links for each owner section in master index
+                  lapply(owners_list, function(owner) {
+                      # Use an ID based on the owner name (cleaned)
+                      clean_id <- str_replace_all(owner, "[^a-zA-Z0-9]", "")
+                      a(href = paste0("../../index.html#", clean_id), owner)
+                  })
+    )
+    
     # --- Build HTML Page ---
     page_title <- if(is.na(row$Title)) paste("Record", row$ID) else row$Title
     
@@ -324,6 +384,7 @@ for (i in 1:nrow(deploy_data)) {
       "))
         ),
         tags$body(
+            navbar,
             div(class = "container",
                 
                 h1(page_title),
