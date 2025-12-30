@@ -35,12 +35,15 @@ deploy_data <- read_csv(csv_file, show_col_types = FALSE)
 # Extract Owner from target_dir (format: works/Owner/Artist--ID)
 deploy_data <- deploy_data %>%
     mutate(
-        Owner_Dir = sapply(str_split(target_dir, "/"), function(x) x[2])
+        Owner_Dir = sapply(str_split(target_dir, "/"), function(x) {
+            if (length(x) >= 2) x[2] else NA_character_
+        })
     )
 
-# Get unique owners list for navbar
+# Get unique owners list for navbar (filter out any NA values)
 owners_list <- deploy_data %>% 
     pull(Owner_Dir) %>% 
+    .[!is.na(.)] %>%
     unique() %>% 
     sort()
 
@@ -74,7 +77,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #2c3e50;
+    background-color: var(--primary-color);
     padding: 1rem 2rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     z-index: 1000;
